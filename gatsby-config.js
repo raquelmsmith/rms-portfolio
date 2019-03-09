@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Raquel M Smith`,
+    description: `The home site for Raquel M Smith, a front-end ReactJS developer based in San Luis Obispo, CA.`,
+    author: `@raquelmsmith`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +15,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-polished`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,8 +29,23 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `raquelmsmith.com`,
+        protocol: `https`,
+        hostingWPCOM: false,
+        useACF: false,
+        includedRoutes: [
+          "**/categories",
+          "**/comments",
+          "**/posts",
+          "**/media",
+          "**/tags",
+          "**/taxonomies",
+        ],
+      },
+    },
   ],
 }
