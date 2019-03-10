@@ -30,7 +30,7 @@ export const orderedListStyles = `
                 color: ${colors.white};
                 margin-left: -1.9rem;
                 margin-right: 10px;
-                font-size: 0.8rem;
+                font-{size}: 0.8rem;
                 font-weight: bold;
                 text-align: center;
                 width: 1.2rem;
@@ -69,7 +69,7 @@ export const underline = (background, text, selection, position, width) => `
     text-decoration: none;
     background: linear-gradient(${background}, ${background}),
         linear-gradient(${background}, ${background}), linear-gradient(${text}, ${text});
-    background-size: 0.05em ${width}, 0.05em ${width}, ${width} ${width};
+    background-{size}: 0.05em ${width}, 0.05em ${width}, ${width} ${width};
     background-repeat: no-repeat, no-repeat, repeat-x;
     text-shadow: 0.03em 0 ${background}, -0.03em 0 ${background},
         0 0.03em ${background}, 0 -0.03em ${background}, 0.06em 0 ${background},
@@ -95,3 +95,47 @@ export const underline = (background, text, selection, position, width) => `
         text-shadow: none;
     }
 `
+
+export const cssTriangle = (
+  color,
+  direction,
+  size = "6px",
+  position = "absolute"
+) => {
+  let css = `
+        display: block;
+        content: '';
+        position: ${position};
+        width: 0;
+        height: 0;`
+  if (direction === "down") {
+    css += `
+        border-left: ${size} solid transparent;
+        border-right: ${size} solid transparent;
+        border-top: ${size} solid ${color};
+        margin-top: 0 - round(${size} / 2.5);
+        `
+  } else if (direction === "up") {
+    css += `
+        border-left: ${size} solid transparent;
+        border-right: ${size} solid transparent;
+        border-bottom: ${size} solid ${color};
+        margin-bottom: 0 - round(${size} / 2.5);
+        `
+  } else if (direction === "right") {
+    css += `
+        border-top: ${size} solid transparent;
+        border-bottom: ${size} solid transparent;
+        border-left: ${size} solid ${color};
+        margin-right: -${size};
+        `
+  } else if (direction === "left") {
+    css += `
+        border-top: ${size} solid transparent;
+        border-bottom: ${size} solid transparent;
+        border-right: ${size} solid ${color};
+        margin-left: -${size};
+        `
+  }
+  return css
+}

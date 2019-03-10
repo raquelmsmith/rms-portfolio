@@ -65,6 +65,9 @@ class BlogComments extends Component {
             > li {
               padding-bottom: 4rem;
               border-bottom: 1px solid ${colors.grey300};
+              &:last-child {
+                border-bottom: none;
+              }
             }
           }
         `}

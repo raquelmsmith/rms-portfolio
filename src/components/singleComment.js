@@ -7,6 +7,7 @@ import {
   // orderedListStyles,
   // unorderedListStyles,
   // underline,
+  cssTriangle,
 } from "../components/global-styles"
 
 class SingleComment extends Component {
@@ -50,10 +51,14 @@ class SingleComment extends Component {
           <div
             css={css`
               background-color: ${colors.white};
-              margin-left: 2rem;
+              margin-top: 30px;
               padding: 2rem;
               line-height: 1.8;
               color: ${colors.grey500};
+              &::before {
+                ${cssTriangle(colors.white, "up", "20px", "relative")}
+                top: calc(-2rem - 20px);
+              }
             `}
             dangerouslySetInnerHTML={{ __html: comment.content }}
           />
