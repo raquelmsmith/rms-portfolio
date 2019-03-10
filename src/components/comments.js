@@ -53,7 +53,6 @@ class BlogComments extends Component {
 
     const allComments = this.props.comments
     const post = this.props.post
-    const sortedComments = sortComments(allComments)
 
     return (
       <div
@@ -72,16 +71,20 @@ class BlogComments extends Component {
           }
         `}
       >
-        <h2>
-          {allComments.length} Comments on "{post.title}"
-        </h2>
-
-        {console.log(sortedComments)}
-        <CommentsWrapper>
-          {sortedComments.map(comment => {
-            return renderComments(comment)
-          })}
-        </CommentsWrapper>
+        {allComments ? (
+          <div>
+            <h2>
+              {allComments.edges.length} Comments on "{post.title}"
+            </h2>
+            <CommentsWrapper>
+              {sortComments(allComments.edges).map(comment => {
+                return renderComments(comment)
+              })}
+            </CommentsWrapper>
+          </div>
+        ) : (
+          <p />
+        )}
       </div>
     )
   }

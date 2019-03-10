@@ -18,7 +18,7 @@ import {
 class SingleBlog extends Component {
   render() {
     const post = this.props.data.wordpressPost
-    const comments = this.props.data.allWordpressWpComments.edges
+    const comments = this.props.data.allWordpressWpComments
     return (
       <Layout>
         <SEO

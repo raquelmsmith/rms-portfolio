@@ -1,9 +1,3 @@
-export const boxShadow = `
-    box-shadow: 0px 4px 26px -2px rgba(51, 51, 51, 0.5);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-`
-
 export const colors = {
   white: "#ffffff",
   grey200: "#f4f7f6",
@@ -13,6 +7,27 @@ export const colors = {
   teal: "#a8dcd1",
   salmon: "#ff8585",
 }
+
+export const boxShadow = `
+    box-shadow: 0px 4px 26px -2px rgba(51, 51, 51, 0.5);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+`
+
+export const buttonPrimary = `
+    background-color: ${colors.salmon};
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: ${colors.white};
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.8rem 1.5rem;
+    border-radius: 3px;
+    letter-spacing: 1px;
+`
 
 export const orderedListStyles = `
     ol {
@@ -30,7 +45,7 @@ export const orderedListStyles = `
                 color: ${colors.white};
                 margin-left: -1.9rem;
                 margin-right: 10px;
-                font-{size}: 0.8rem;
+                font-size: 0.8rem;
                 font-weight: bold;
                 text-align: center;
                 width: 1.2rem;
@@ -69,7 +84,7 @@ export const underline = (background, text, selection, position, width) => `
     text-decoration: none;
     background: linear-gradient(${background}, ${background}),
         linear-gradient(${background}, ${background}), linear-gradient(${text}, ${text});
-    background-{size}: 0.05em ${width}, 0.05em ${width}, ${width} ${width};
+    background-size: 0.05em ${width}, 0.05em ${width}, ${width} ${width};
     background-repeat: no-repeat, no-repeat, repeat-x;
     text-shadow: 0.03em 0 ${background}, -0.03em 0 ${background},
         0 0.03em ${background}, 0 -0.03em ${background}, 0.06em 0 ${background},
