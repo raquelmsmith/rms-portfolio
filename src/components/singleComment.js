@@ -12,7 +12,7 @@ import {
 class SingleComment extends Component {
   render(props) {
     const comment = this.props.comment.node
-    console.log(comment)
+    const children = this.props.children
     const getAuthorNameLink = (name, url) => {
       if (url) {
         return <a href={url}>{name}</a>
@@ -53,11 +53,12 @@ class SingleComment extends Component {
               margin-left: 2rem;
               padding: 2rem;
               line-height: 1.8;
-              color: ${colors.mediumGrey};
+              color: ${colors.grey500};
             `}
             dangerouslySetInnerHTML={{ __html: comment.content }}
           />
         </div>
+        {children}
       </li>
     )
   }

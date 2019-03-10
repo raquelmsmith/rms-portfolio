@@ -45,7 +45,7 @@ class SingleBlog extends Component {
               font-size: 1.1rem;
               line-height: 1.6;
               a {
-                color: ${colors.darkGrey};
+                color: ${colors.grey800};
                 text-decoration: none;
                 ${underline(
                   colors.white,
@@ -79,7 +79,7 @@ class SingleBlog extends Component {
               ${orderedListStyles}
               ${unorderedListStyles}
               blockquote {
-                background: ${colors.lightGrey};
+                background: ${colors.grey200};
                 padding: 1.5rem;
                 border-radius: 4px;
                 border-left: 4px solid ${colors.teal};

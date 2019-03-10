@@ -5,12 +5,13 @@ import { css } from "@emotion/core"
 import SingleComment from "../components/singleComment"
 import CommentsWrapper from "../components/commentsWrapper"
 
-import // boxShadow,
-// colors,
-// orderedListStyles,
-// unorderedListStyles,
-// underline,
-"../components/global-styles"
+import {
+  // boxShadow,
+  colors,
+  // orderedListStyles,
+  // unorderedListStyles,
+  // underline,
+} from "../components/global-styles"
 
 class BlogComments extends Component {
   render(props) {
@@ -36,6 +37,20 @@ class BlogComments extends Component {
       }
       return comment
     }
+    const renderComments = comment => {
+      if (!Array.isArray(comment)) {
+        return <SingleComment comment={comment} />
+      } else {
+        return (
+          <SingleComment comment={comment[0]}>
+            <CommentsWrapper>
+              {comment[1].map(comment => renderComments(comment))}
+            </CommentsWrapper>
+          </SingleComment>
+        )
+      }
+    }
+
     const allComments = this.props.comments
     const post = this.props.post
     const sortedComments = sortComments(allComments)
@@ -45,6 +60,13 @@ class BlogComments extends Component {
         css={css`
           max-width: 600px;
           margin: auto;
+          > ol {
+            margin-left: 0;
+            > li {
+              padding-bottom: 4rem;
+              border-bottom: 1px solid ${colors.grey300};
+            }
+          }
         `}
       >
         <h2>
@@ -54,9 +76,7 @@ class BlogComments extends Component {
         {console.log(sortedComments)}
         <CommentsWrapper>
           {sortedComments.map(comment => {
-            if (!Array.isArray(comment)) {
-              return <SingleComment comment={comment} />
-            }
+            return renderComments(comment)
           })}
         </CommentsWrapper>
       </div>

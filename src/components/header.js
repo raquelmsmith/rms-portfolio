@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => (
             text-transform: lowercase;
             text-decoration: none;
             ${underline(
-              colors.darkGrey,
+              colors.grey800,
               colors.teal,
               colors.teal,
               "100%",
@@ -59,7 +59,7 @@ const Header = ({ siteTitle }) => (
               text-decoration: none;
               &:hover {
                 ${underline(
-                  colors.darkGrey,
+                  colors.grey800,
                   colors.teal,
                   colors.teal,
                   "100%",

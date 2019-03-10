@@ -6,9 +6,10 @@ export const boxShadow = `
 
 export const colors = {
   white: "#ffffff",
-  lightGrey: "#f4f7f6",
-  mediumGrey: "#7c7c7c",
-  darkGrey: "#333",
+  grey200: "#f4f7f6",
+  grey300: "#e0e4e3",
+  grey500: "#7c7c7c",
+  grey800: "#333",
   teal: "#a8dcd1",
   salmon: "#ff8585",
 }
