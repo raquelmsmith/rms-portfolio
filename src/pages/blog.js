@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {
   boxShadow,
+  buttonPrimary,
   colors,
   orderedListStyles,
   underline,
@@ -80,7 +81,26 @@ class BlogIndex extends Component {
               <Link to={`blog/${node.slug}`}>
                 <h3>{node.title}</h3>
               </Link>
-              <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <div
+                css={css`
+                  .more-link-wrapper {
+                    display: none;
+                  }
+                `}
+                dangerouslySetInnerHTML={{ __html: node.excerpt }}
+              />
+              <Link
+                to={`blog/${node.slug}`}
+                aria-label={`Continue reading ${node.title}`}
+              >
+                <button
+                  css={css`
+                    ${buttonPrimary}
+                  `}
+                >
+                  Continue Reading
+                </button>
+              </Link>
             </div>
           ))}
         </div>
