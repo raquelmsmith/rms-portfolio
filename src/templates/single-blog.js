@@ -106,6 +106,7 @@ export default SingleBlog
 export const pageQuery = graphql`
   query($id: String!, $postId: Int!) {
     wordpressPost(id: { eq: $id }) {
+      wordpress_id
       title
       content
       date

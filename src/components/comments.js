@@ -4,6 +4,7 @@ import { React, Component } from "react"
 import { css } from "@emotion/core"
 import SingleComment from "../components/singleComment"
 import CommentsWrapper from "../components/commentsWrapper"
+import CommentForm from "../components/commentForm"
 
 import {
   // boxShadow,
@@ -73,6 +74,7 @@ class BlogComments extends Component {
       >
         {allComments ? (
           <div>
+            <CommentForm />
             <h2>
               {allComments.edges.length} Comments on "{post.title}"
             </h2>
@@ -83,7 +85,9 @@ class BlogComments extends Component {
             </CommentsWrapper>
           </div>
         ) : (
-          <p />
+          <div>
+            <CommentForm postId={post.wordpress_id} />
+          </div>
         )}
       </div>
     )

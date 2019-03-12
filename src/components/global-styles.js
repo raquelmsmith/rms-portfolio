@@ -29,6 +29,18 @@ export const buttonPrimary = `
     letter-spacing: 1px;
 `
 
+export const formField = `
+    border: none;
+    background: ${colors.grey200};
+    margin: 0.5rem 0 1rem;
+    padding: 0.5rem;
+    border-bottom: 3px solid ${colors.grey200};
+    &:focus {
+        outline: none;
+        border-bottom: 3px solid ${colors.teal};
+    }
+`
+
 export const orderedListStyles = `
     ol {
         list-style: none;
