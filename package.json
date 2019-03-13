@@ -29,8 +29,10 @@
     "typography-theme-lincoln": "^0.16.18"
   },
   "devDependencies": {
+    "formik": "^1.5.1",
     "gatsby-source-wordpress": "^3.0.41",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "yup": "^0.26.10"
   },
   "keywords": [
     "gatsby"

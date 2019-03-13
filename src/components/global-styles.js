@@ -32,7 +32,7 @@ export const buttonPrimary = `
 export const formField = `
     border: none;
     background: ${colors.grey200};
-    margin: 0.5rem 0 1rem;
+    margin: 0.5rem 0 0;
     padding: 0.5rem;
     border-bottom: 3px solid ${colors.grey200};
     &:focus {
