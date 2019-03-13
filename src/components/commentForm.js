@@ -12,20 +12,22 @@ import {
 
 class CommentForm extends Component {
   render(props) {
+    console.log(props)
     const CommentSchema = Yup.object().shape({
-      author: Yup.string()
+      author_name: Yup.string()
         .min(2, "Please provide a valid name")
         .max(245, "The name is too long")
         .required("This field is required"),
-      url: Yup.string().url(),
-      comment: Yup.string()
+      author_url: Yup.string().url(),
+      content: Yup.string()
         .min(2, "Please include a comment")
         .max(65525, "Your comment exceeds the maximum length")
         .required("This field is required"),
-      email: Yup.string()
+      author_email: Yup.string()
         .email("Invalid email")
         .required("This field is required"),
     })
+    const postId = this.props.postId
     return (
       <div
         css={css`
@@ -35,6 +37,7 @@ class CommentForm extends Component {
           margin-top: 2rem;
           color: ${colors.grey500};
         `}
+        id="respond"
       >
         <div
           css={css`
@@ -52,14 +55,26 @@ class CommentForm extends Component {
         </p>
         <Formik
           initialValues={{
-            author: "",
-            url: "",
-            email: "",
-            comment: "",
+            author_name: "",
+            author_url: "",
+            author_email: "",
+            content: "",
           }}
           validationSchema={CommentSchema}
           onSubmit={values => {
             // same shape as initial values
+            let target = `https://raquelmsmith.com/wp-json/wp/v2/comments?p=${postId}`
+            fetch(target, {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(values),
+            })
+              .then(response => response.json())
+              .then(data => console.log(JSON.stringify(data)))
+              .catch(error => console.error(error))
             console.log(values)
           }}
         >
@@ -81,7 +96,7 @@ class CommentForm extends Component {
               <div>
                 <label htmlFor="comment">Comment*</label>
                 <Field
-                  name="comment"
+                  name="content"
                   id="comment"
                   component="textarea"
                   rows="8"
@@ -90,28 +105,28 @@ class CommentForm extends Component {
                     ${formField}
                   `}
                 />
-                {errors.comment && touched.comment ? (
-                  <div className="error">{errors.comment}</div>
+                {errors.content && touched.content ? (
+                  <div className="error">{errors.content}</div>
                 ) : null}
               </div>
               <div>
                 <label htmlFor="author">Name*</label>
                 <Field
-                  name="author"
+                  name="author_name"
                   id="author"
                   size="30"
                   css={css`
                     ${formField}
                   `}
                 />
-                {errors.author && touched.author ? (
-                  <div className="error">{errors.author}</div>
+                {errors.author_name && touched.author_name ? (
+                  <div className="error">{errors.author_name}</div>
                 ) : null}
               </div>
               <div>
                 <label htmlFor="email">Email*</label>
                 <Field
-                  name="email"
+                  name="author_email"
                   id="email"
                   type="email"
                   size="30"
@@ -119,14 +134,14 @@ class CommentForm extends Component {
                     ${formField}
                   `}
                 />
-                {errors.email && touched.email ? (
-                  <div className="error">{errors.email}</div>
+                {errors.author_email && touched.author_email ? (
+                  <div className="error">{errors.author_email}</div>
                 ) : null}
               </div>
               <div>
                 <label htmlFor="url">Website</label>
                 <Field
-                  name="url"
+                  name="author_url"
                   id="url"
                   type="url"
                   size="30"
@@ -134,8 +149,8 @@ class CommentForm extends Component {
                     ${formField}
                   `}
                 />
-                {errors.url && touched.url ? (
-                  <div className="error">{errors.url}</div>
+                {errors.author_url && touched.author_url ? (
+                  <div className="error">{errors.author_url}</div>
                 ) : null}
               </div>
               <Field
