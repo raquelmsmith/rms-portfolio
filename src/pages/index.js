@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 
-import { colors } from "../components/global-styles"
+import { colors, underline } from "../components/global-styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -20,12 +20,26 @@ const IndexPage = () => (
       css={css`
         max-width: 900px;
         font-size: 1.3rem;
-        margin: 2rem 0 4rem;
+        margin: 2rem 0 0.5rem;
         line-height: 1.6;
       `}
     >
-      I'm a front-end developer based in San Luis Obispo, CA. I have a passion
-      for creating blazing fast web apps with a focus on SEO.
+      I'm a front-end developer based in San Luis Obispo, CA. I build stuff on
+      the internet, mostly using ReactJS.
+    </p>
+    <p
+      css={css`
+        max-width: 900px;
+        font-size: 1.3rem;
+        margin: 0 0 4rem;
+        line-height: 1.6;
+        a {
+          text-decoration: none;
+          ${underline(colors.grey200, colors.teal, colors.teal, "100%", "2px")}
+        }
+      `}
+    >
+      <Link to="/about-me">Learn more about me.</Link>
     </p>
     <div>
       <h2>Projects by Technology</h2>
@@ -73,21 +87,6 @@ const IndexPage = () => (
         </Link>
         <Link to="/tag/css3/">
           <li>css3</li>
-        </Link>
-        <Link to="/tag/responsive-design/">
-          <li>responsive-design</li>
-        </Link>
-        <Link to="/tag/rest-apis/">
-          <li>rest-apis</li>
-        </Link>
-        <Link to="/tag/git/">
-          <li>git</li>
-        </Link>
-        <Link to="/tag/seo/">
-          <li>seo</li>
-        </Link>
-        <Link to="/tag/accessibility/">
-          <li>accessibility</li>
         </Link>
         <Link to="/tag/php/">
           <li>php</li>

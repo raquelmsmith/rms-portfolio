@@ -1,6 +1,6 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 import { css } from "@emotion/core"
 
 import { colors, fonts, underline } from "../components/global-styles"
@@ -69,6 +69,9 @@ const Header = ({ siteTitle }) => (
             }
           `}
         >
+          <li>
+            <Link to="/about-me/">About</Link>
+          </li>
           <li>
             <Link to="/projects/">Projects</Link>
           </li>

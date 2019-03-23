@@ -11,8 +11,14 @@ import {
 } from "../components/global-styles"
 
 class CommentForm extends Component {
-  render(props) {
-    console.log(props)
+  constructor(props) {
+    super(props)
+    this.state = {
+      isSubmitting: false,
+      formSubmitted: false,
+    }
+  }
+  render() {
     const CommentSchema = Yup.object().shape({
       author_name: Yup.string()
         .min(2, "Please provide a valid name")
@@ -35,6 +41,7 @@ class CommentForm extends Component {
           border-top: 5px solid ${colors.salmon};
           padding: 2rem;
           margin-top: 2rem;
+          margin-bottom: 2rem;
           color: ${colors.grey500};
         `}
         id="respond"
@@ -55,6 +62,8 @@ class CommentForm extends Component {
         </p>
         <Formik
           initialValues={{
+            post: postId,
+            parent: 0,
             author_name: "",
             author_url: "",
             author_email: "",
@@ -62,8 +71,9 @@ class CommentForm extends Component {
           }}
           validationSchema={CommentSchema}
           onSubmit={values => {
+            this.setState({ isSubmitting: true })
             // same shape as initial values
-            let target = `https://raquelmsmith.com/wp-json/wp/v2/comments?p=${postId}`
+            let target = `https://raquelmsmith.com/wp-json/wp/v2/comments`
             fetch(target, {
               method: "POST",
               headers: {
@@ -73,9 +83,17 @@ class CommentForm extends Component {
               body: JSON.stringify(values),
             })
               .then(response => response.json())
-              .then(data => console.log(JSON.stringify(data)))
-              .catch(error => console.error(error))
-            console.log(values)
+              .then(data => {
+                console.log(JSON.stringify(data))
+                this.setState({
+                  isSubmitting: false,
+                  formSubmitted: true,
+                })
+              })
+              .catch(error => {
+                console.error(error)
+                this.setState({ isSubmitting: false })
+              })
           }}
         >
           {({ errors, touched }) => (
@@ -153,22 +171,34 @@ class CommentForm extends Component {
                   <div className="error">{errors.author_url}</div>
                 ) : null}
               </div>
-              <Field
-                type="hidden"
-                name="comment_post_ID"
-                value={this.props.postId}
-                id="comment_post_ID"
-              />
               <button
                 type="submit"
+                disabled={
+                  this.state.isSubmitting || this.state.formSubmitted
+                    ? true
+                    : false
+                }
                 css={css`
-                ${buttonPrimary}
-                background-color: ${colors.teal};
-                margin-top: 1rem;
+                  ${buttonPrimary}
+                  background-color: ${colors.teal};
+                  margin-top: 2rem;
               `}
               >
                 Post Comment
               </button>
+              {this.state.formSubmitted ? (
+                <span
+                  css={css`
+                    font-size: 0.8rem;
+                    margin-left: 0.5rem;
+                    font-style: italic;
+                  `}
+                >
+                  Thanks! Your comment is awaiting moderation.
+                </span>
+              ) : (
+                ""
+              )}
             </Form>
           )}
         </Formik>

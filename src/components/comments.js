@@ -74,7 +74,7 @@ class BlogComments extends Component {
       >
         {allComments ? (
           <div>
-            <CommentForm />
+            <CommentForm postId={post.wordpress_id} />
             <h2>
               {allComments.edges.length} Comments on "{post.title}"
             </h2>

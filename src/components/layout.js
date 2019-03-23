@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -35,18 +36,7 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
         </div>
-        <footer
-          css={css`
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 0px 1.0875rem 1.45rem;
-            padding-top: 0;
-          `}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </>
     )}
   />

@@ -54,6 +54,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   background: none;
+  color: inherit;
 }
 a:active,
 a:hover {
@@ -73,7 +74,7 @@ dfn {
   font-style: italic;
 }
 h1 {
-  font-size: 2em;
+  font-size: 3rem;
   margin: 0.67em 0;
 }
 mark {
@@ -245,7 +246,7 @@ h1 {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
+  font-size: 3rem;
   line-height: 1.1;
 }
 h2 {

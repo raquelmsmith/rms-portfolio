@@ -9,9 +9,7 @@ export const colors = {
 }
 
 export const boxShadow = `
-    box-shadow: 0px 4px 26px -2px rgba(51, 51, 51, 0.5);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
 `
 
 export const buttonPrimary = `
@@ -27,6 +25,12 @@ export const buttonPrimary = `
     padding: 0.8rem 1.5rem;
     border-radius: 3px;
     letter-spacing: 1px;
+    &:disabled {
+        background: ${colors.grey300};
+    }
+    &:focus {
+        outline: none;
+    }
 `
 
 export const formField = `
