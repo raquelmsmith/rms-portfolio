@@ -5,6 +5,7 @@ import { css } from "@emotion/core"
 import { colors, underline } from "../components/global-styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import TagList from "../components/tagList"
 
 const IndexPage = () => (
   <Layout>
@@ -43,55 +44,7 @@ const IndexPage = () => (
     </p>
     <div>
       <h2>Projects by Technology</h2>
-      <ul
-        css={css`
-          list-style-type: none;
-          display: flex;
-          flex-wrap: wrap;
-          margin-left: 0;
-          max-width: 700px;
-          & a {
-            color: unset;
-            background: none;
-            text-decoration: none;
-          }
-          & li {
-            background-color: white;
-            margin-right: 0.75rem;
-            padding: 2px 0.45rem;
-            border-radius: 4px;
-            border-bottom: 2px solid ${colors.teal};
-            &:before {
-              content: "#";
-              margin-right: 2px;
-              font-weight: bold;
-              color: ${colors.teal};
-            }
-            &:hover {
-              border-bottom: 2px solid ${colors.salmon};
-              &:before {
-                color: ${colors.salmon};
-              }
-            }
-          }
-        `}
-      >
-        <Link to="/tag/reactjs/">
-          <li>reactjs</li>
-        </Link>
-        <Link to="/tag/gatsbyjs/">
-          <li>gatsbyjs</li>
-        </Link>
-        <Link to="/tag/es6/">
-          <li>es6</li>
-        </Link>
-        <Link to="/tag/css3/">
-          <li>css3</li>
-        </Link>
-        <Link to="/tag/php/">
-          <li>php</li>
-        </Link>
-      </ul>
+      <TagList tags={["reactjs", "gatsbyjs", "es6", "css3", "php"]} />
     </div>
   </Layout>
 )
