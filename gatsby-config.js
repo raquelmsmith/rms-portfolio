@@ -3,6 +3,7 @@ module.exports = {
     title: `Raquel M Smith`,
     description: `The home site for Raquel M Smith, a front-end ReactJS developer based in San Luis Obispo, CA.`,
     author: `@raquelmsmith`,
+    siteUrl: `https://wizardly-spence-993265.netlify.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
