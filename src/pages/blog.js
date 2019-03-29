@@ -27,6 +27,15 @@ class BlogIndex extends Component {
             margin: auto;
           `}
         >
+          <h1
+            css={css`
+              text-align: center;
+              margin-bottom: 3rem;
+              font-size: 4rem;
+            `}
+          >
+            Blog
+          </h1>
           {data.allWordpressPost.edges.map(({ node }) => (
             <div
               css={css`

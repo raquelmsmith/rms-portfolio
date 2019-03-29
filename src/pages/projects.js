@@ -18,6 +18,7 @@ class Projects extends Component {
           css={css`
             text-align: center;
             margin: 3rem auto;
+            font-size: 4rem;
           `}
         >
           Projects

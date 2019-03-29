@@ -30,6 +30,7 @@ class SingleBlog extends Component {
             dangerouslySetInnerHTML={{ __html: post.title }}
             css={css`
               font-size: 4rem;
+              text-align: center;
             `}
           />
           <Article>{parse(post.content)}</Article>

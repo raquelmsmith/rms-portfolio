@@ -9,7 +9,6 @@ const Header = ({ siteTitle }) => (
   <header
     css={css`
       background-color: #333;
-      margin-bottom: 1.45rem;
       font-family: ${fonts.quicksand};
     `}
   >
