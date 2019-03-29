@@ -10,7 +10,7 @@ class Footer extends Component {
     return (
       <footer
         css={css`
-          padding: 1rem 2rem;
+          padding: 1rem;
           background-color: ${colors.grey800};
           color: ${colors.grey300};
           text-align: center;
@@ -20,6 +20,7 @@ class Footer extends Component {
           z-index: 100;
           @media (min-width: 650px) {
             position: relative;
+            padding: 1rem 2rem;
           }
         `}
       >

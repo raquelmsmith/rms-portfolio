@@ -23,8 +23,11 @@ class BlogIndex extends Component {
         <div
           css={css`
             max-width: 900px;
-            padding: 3rem;
+            padding: 3rem 0;
             margin: auto;
+            @media (min-width: 650px) {
+              padding: 3rem;
+            }
           `}
         >
           <h1

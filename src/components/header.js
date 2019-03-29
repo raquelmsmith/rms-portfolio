@@ -19,7 +19,10 @@ const Header = ({ siteTitle }) => (
         max-width: 1200px;
         padding: 1.45rem 1.0875rem;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        @media (min-width: 650px) {
+          justify-content: space-between;
+        }
       `}
     >
       <div style={{ margin: 0 }}>
@@ -43,7 +46,14 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </div>
-      <nav>
+      <nav
+        css={css`
+          display: none;
+          @media (min-width: 650px) {
+            display: block;
+          }
+        `}
+      >
         <ul
           css={css`
             list-style: none;

@@ -26,10 +26,13 @@ class Projects extends Component {
         <div
           css={css`
             max-width: 900px;
-            padding: 0 3rem 3rem;
+            padding: 0 0 3rem;
             margin: 0 auto;
             article + article {
               margin-top: 3rem;
+            }
+            @media (min-width: 650px) {
+              padding: 0 3rem 3rem;
             }
           `}
         >

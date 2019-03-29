@@ -16,9 +16,12 @@ class Article extends Component {
       <div
         css={css`
           background: ${colors.white};
-          padding: 3rem;
+          padding: 1.5rem;
           font-size: 1.1rem;
           line-height: 1.6;
+          @media (min-width: 650px) {
+            padding: 3rem;
+          }
           a {
             color: ${colors.grey800};
             text-decoration: none;

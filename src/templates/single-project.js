@@ -23,16 +23,22 @@ class SingleProject extends Component {
         <div
           css={css`
             max-width: 900px;
-            padding: 3rem;
+            padding: 3rem 0;
             margin: auto;
+            @media (min-width: 650px) {
+              padding: 3rem;
+            }
           `}
         >
           <h1
             dangerouslySetInnerHTML={{ __html: project.title }}
             css={css`
-              font-size: 4rem;
-              text-align: center;
               margin-bottom: 3rem;
+              font-size: 2.5rem;
+              text-align: center;
+              @media (min-width: 650px) {
+                font-size: 4rem;
+              }
             `}
           />
           <section>

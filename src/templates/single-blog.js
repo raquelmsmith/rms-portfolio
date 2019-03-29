@@ -22,15 +22,22 @@ class SingleBlog extends Component {
         <div
           css={css`
             max-width: 900px;
-            padding: 3rem;
+            padding: 3rem 0;
             margin: auto;
+            @media (min-width: 650px) {
+              padding: 3rem;
+            }
           `}
         >
           <h1
             dangerouslySetInnerHTML={{ __html: post.title }}
             css={css`
-              font-size: 4rem;
+              font-size: 2.5rem;
               text-align: center;
+              margin-bottom: 3rem;
+              @media (min-width: 650px) {
+                font-size: 4rem;
+              }
             `}
           />
           <Article>{parse(post.content)}</Article>

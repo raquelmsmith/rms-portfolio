@@ -14,8 +14,11 @@ const AboutMe = props => (
     <div
       css={css`
         max-width: 900px;
-        padding: 3rem;
+        padding: 3rem 0;
         margin: auto;
+        @media (min-width: 650px) {
+          padding: 3rem;
+        }
       `}
     >
       <Article>
@@ -23,11 +26,14 @@ const AboutMe = props => (
           css={css`
             max-width: 200px;
             border-radius: 100%;
-            float: right;
             width: 200px;
-            margin-left: 2rem;
-            margin-top: 2rem;
+            margin: 0 auto 2rem;
             ${boxShadow}
+            @media (min-width: 650px) {
+              margin-left: 2rem;
+              margin-top: 2rem;
+              float: right;
+            }
           `}
           data-pin-nopin="true"
           alt="Headshot of Raquel M Smith"
@@ -143,19 +149,29 @@ const AboutMe = props => (
 
         <div
           css={css`
-            float: right;
-            margin-top: -6rem;
-            margin-left: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            @media (min-width: 800px) {
+              display: block;
+              float: right;
+              margin-top: -6rem;
+              margin-left: 2rem;
+            }
           `}
         >
           <Img
             css={css`
               max-width: 200px;
               border-radius: 100%;
-              width: 200px;
-              margin-left: 6rem;
-              margin-top: 2rem;
+              width: 150px;
               ${boxShadow}
+              @media (min-width: 800px) {
+                width: 200px;
+                margin-left: 6rem;
+                margin-top: 2rem;
+              }
             `}
             data-pin-nopin="true"
             alt="Headshot of Raquel M Smith"
@@ -166,11 +182,14 @@ const AboutMe = props => (
             css={css`
               max-width: 200px;
               border-radius: 100%;
-              width: 200px;
-              margin-left: 0;
-              margin-top: -4rem;
-              border: 4px solid ${colors.white};
-              z-index: 10;
+              width: 150px;
+              @media (min-width: 800px) {
+                margin-left: 0;
+                margin-top: -4rem;
+                border: 4px solid ${colors.white};
+                z-index: 10;
+                width: 200px;
+              }
             `}
             data-pin-nopin="true"
             alt="Headshot of Raquel M Smith"
@@ -181,10 +200,13 @@ const AboutMe = props => (
             css={css`
               max-width: 200px;
               border-radius: 100%;
-              width: 200px;
-              margin-left: 10rem;
-              margin-top: -7rem;
+              width: 150px;
               ${boxShadow}
+              @media (min-width: 800px) {
+                margin-left: 10rem;
+                margin-top: -7rem;
+                width: 200px;
+              }
             `}
             data-pin-nopin="true"
             alt="Headshot of Raquel M Smith"

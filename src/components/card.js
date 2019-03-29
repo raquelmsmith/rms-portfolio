@@ -10,13 +10,19 @@ class Card extends Component {
       <article
         css={css`
           background: ${colors.white};
-          display: flex;
+          @media (min-width: 650px) {
+            display: flex;
+          }
         `}
       >
         <section
           css={css`
-            border-right: 1px solid ${colors.grey200};
-            min-width: 400px;
+            border-bottom: 1px solid ${colors.grey200};
+            @media (min-width: 650px) {
+              border-right: 1px solid ${colors.grey200};
+              border-bottom: none;
+              min-width: 400px;
+            }
           `}
         >
           <Link to={this.props.target}>{this.props.children}</Link>
