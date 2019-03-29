@@ -45,16 +45,15 @@ const AboutMe = props => (
 
         <p>
           I'm a front-end developer based in sunny San Luis Obispo, CA. I'm
-          passionate about building amazing exerpeinces for the mobile web, from
+          passionate about building amazing experiences for the mobile web, from
           blazing performance to progressive web apps to solid mobile user
           experiences.
         </p>
 
         <p>
           This, of course, translates to the desktop as well, where
-          optimizations for the mobile experience improve site performance
-          overall and result in a seamless device-to-device experience for
-          users.
+          optimizations for mobile improve site performance overall and result
+          in a seamless device-to-device experience for users.
         </p>
 
         <h2>Technology</h2>
