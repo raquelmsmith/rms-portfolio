@@ -1,18 +1,11 @@
 import React, { Component } from "react"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
-import {
-  boxShadow,
-  colors,
-  orderedListStyles,
-  unorderedListStyles,
-  underline,
-} from "../components/global-styles"
+import { colors, underline } from "../components/global-styles"
 import TagList from "./tagList"
 
 class Card extends Component {
   render() {
-    const data = this.props.data
     return (
       <article
         css={css`
@@ -45,16 +38,16 @@ class Card extends Component {
                   colors.white,
                   colors.salmon,
                   colors.salmon,
-                  "95%",
-                  "2px"
+                  "94%",
+                  "3px"
                 )}
                 &:hover {
                   ${underline(
                     colors.white,
                     colors.teal,
                     colors.teal,
-                    "95%",
-                    "2px"
+                    "94%",
+                    "3px"
                   )}
                 }
               `}
@@ -63,7 +56,7 @@ class Card extends Component {
               {this.props.title}
             </Link>
           </h2>
-          <p>{this.props.description}</p>
+          <p dangerouslySetInnerHTML={{ __html: this.props.description }} />
           <TagList tags={this.props.tags} />
         </section>
       </article>

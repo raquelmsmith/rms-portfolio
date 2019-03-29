@@ -45,14 +45,22 @@ module.exports = {
           "**/media",
           "**/tags",
           "**/taxonomies",
+          "**/projects",
         ],
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-plugin-remote-images`,
       options: {
-        policy: [{ userAgent: '*', disallow: '/' }]
-      }
+        nodeType: "wordpressWpProjects",
+        imagePath: "featured_media.source_url",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", disallow: "/" }],
+      },
     },
   ],
 }

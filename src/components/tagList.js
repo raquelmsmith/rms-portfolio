@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import { colors } from "../components/global-styles"
 
@@ -32,19 +31,11 @@ class TagList extends Component {
               font-weight: bold;
               color: ${colors.teal};
             }
-            &:hover {
-              border-bottom: 2px solid ${colors.salmon};
-              &:before {
-                color: ${colors.salmon};
-              }
-            }
           }
         `}
       >
         {this.props.tags.map(tag => (
-          <Link to={`tag/${tag}`}>
-            <li>{tag}</li>
-          </Link>
+          <li>{tag}</li>
         ))}
       </ul>
     )
