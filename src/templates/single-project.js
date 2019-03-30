@@ -19,6 +19,7 @@ class SingleProject extends Component {
         <SEO
           title={project.yoast_meta.yoast_wpseo_title}
           description={project.yoast_meta.yoast_wpseo_metadesc}
+          keywords={project.tags.map(tag => tag.name)}
         />
         <div
           css={css`

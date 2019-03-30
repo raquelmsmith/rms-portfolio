@@ -19,7 +19,10 @@ class BlogIndex extends Component {
 
     return (
       <Layout>
-        <SEO title="Blog" />
+        <SEO
+          title="Blog"
+          description="Blog posts about building websites with JavaScript, ReactJS, and PHP from Raquel M Smith, a mobile-focused front-end web developer"
+        />
         <div
           css={css`
             max-width: 900px;

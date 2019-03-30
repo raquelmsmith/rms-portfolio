@@ -13,7 +13,10 @@ class Projects extends Component {
 
     return (
       <Layout>
-        <SEO title="Projects" />
+        <SEO
+          title="Projects"
+          description="A sampling of projects built by Raquel M Smith using JavaScript, ReactJS, and PHP"
+        />
         <h1
           css={css`
             text-align: center;

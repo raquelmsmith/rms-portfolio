@@ -9,7 +9,10 @@ import TagList from "../components/tagList"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Raquel M Smith" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Raquel M Smith"
+      keywords={[`developer`, `javascript`, `react`, `php`]}
+    />
     <h1
       css={css`
         font-size: 5rem;

@@ -10,7 +10,10 @@ import { colors, boxShadow } from "../components/global-styles"
 
 const AboutMe = props => (
   <Layout>
-    <SEO title="About - Front-End Developer with a Passion for the Mobile Web" />
+    <SEO
+      title="About"
+      description="Raquel M Smith is a front-end developer with a passion for the mobile web."
+    />
     <div
       css={css`
         max-width: 900px;
