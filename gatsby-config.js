@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `raquelmsmith.com`,
+        baseUrl: `api.raquelmsmith.com`,
         protocol: `https`,
         hostingWPCOM: false,
         useACF: false,
