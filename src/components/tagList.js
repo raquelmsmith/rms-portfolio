@@ -25,7 +25,7 @@ class TagList extends Component {
             border-radius: 4px;
             border: 1px solid ${colors.grey200};
             border-bottom: 2px solid ${colors.teal};
-            margin-bottom: 0;
+            margin-bottom: 0.5rem;
             &:before {
               content: "#";
               margin-right: 2px;
