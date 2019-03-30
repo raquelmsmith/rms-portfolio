@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import { css } from "@emotion/core"
-import Icon from "./icon"
-import { Link } from "gatsby"
 
 import { colors, underline } from "../components/global-styles"
+import FooterLink from "./footerLink"
 
 class Footer extends Component {
   render() {
@@ -52,178 +51,48 @@ class Footer extends Component {
                 justify-content: center;
               }
               margin: 0;
-              li {
-                align-items: center;
-                padding: 0.5rem;
-                margin-bottom: 0;
-                font-size: 0.75rem;
-                @media (min-width: 650px) {
-                  padding: 0.5rem 1.5rem;
-                  font-size: 1rem;
-                }
-              }
-              svg {
-                margin-right: 0.5rem;
-                display: block;
-                margin: 0 auto 0.4rem;
-                @media (min-width: 650px) {
-                  margin-right: 0.5rem;
-                }
-              }
             `}
           >
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: none;
-                }
-              `}
-            >
-              <Icon
-                name="person"
-                width="1.2rem"
-                height="1.2rem"
-                viewBox="0 0 256 512"
-                fill={colors.grey300}
-              />
-              <Link to="/about-me/">About</Link>
-            </li>
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: none;
-                }
-              `}
-            >
-              <Icon
-                name="asterisk"
-                width="1.2rem"
-                height="1.2rem"
-                fill={colors.grey300}
-              />
-              <Link to="/projects/">Projects</Link>
-            </li>
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: none;
-                }
-              `}
-            >
-              <Icon
-                name="pencil"
-                width="1.2rem"
-                height="1.2rem"
-                fill={colors.grey300}
-              />
-              <Link to="/blog/">Blog</Link>
-            </li>
-
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: flex;
-                }
-              `}
-            >
-              <Icon
-                name="github"
-                width="1.2rem"
-                height="1.2rem"
-                fill={colors.grey300}
-              />
-              <a
-                href="https://github.com/raquelmsmith"
-                css={css`
-                  display: none;
-                  @media (min-width: 650px) {
-                    display: inline-block;
-                  }
-                `}
-              >
-                @raquelmsmith
-              </a>
-              <a
-                href="https://github.com/raquelmsmith"
-                css={css`
-                  @media (min-width: 650px) {
-                    display: none;
-                  }
-                `}
-              >
-                Github
-              </a>
-            </li>
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: flex;
-                }
-              `}
-            >
-              <Icon
-                name="linkedin"
-                width="1.2rem"
-                height="1.2rem"
-                fill={colors.grey300}
-              />
-              <a
-                href="https://www.linkedin.com/in/raquelmsmith/"
-                css={css`
-                  display: none;
-                  @media (min-width: 650px) {
-                    display: inline-block;
-                  }
-                `}
-              >
-                @raquelmsmith
-              </a>
-              <a
-                href="https://www.linkedin.com/in/raquelmsmith/"
-                css={css`
-                  @media (min-width: 650px) {
-                    display: none;
-                  }
-                `}
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li
-              css={css`
-                @media (min-width: 650px) {
-                  display: flex;
-                }
-              `}
-            >
-              <Icon
-                name="envelope"
-                width="1.2rem"
-                height="1.2rem"
-                fill={colors.grey300}
-              />
-              <a
-                href="mailto:hello@raquelmsmith.com"
-                css={css`
-                  display: none;
-                  @media (min-width: 650px) {
-                    display: inline-block;
-                  }
-                `}
-              >
-                hello@raquelmsmith.com
-              </a>
-              <a
-                href="mailto:hello@raquelmsmith.com"
-                css={css`
-                  @media (min-width: 650px) {
-                    display: none;
-                  }
-                `}
-              >
-                Email
-              </a>
-            </li>
+            <FooterLink
+              icon="person"
+              iconViewBox="0 0 256 512"
+              isInternal={true}
+              target="/about-me/"
+              anchor="About"
+              mobileOnly={true}
+            />
+            <FooterLink
+              icon="asterisk"
+              isInternal={true}
+              target="/projects/"
+              anchor="Projects"
+              mobileOnly={true}
+            />
+            <FooterLink
+              icon="pencil"
+              isInternal={true}
+              target="/blog/"
+              anchor="Blog"
+              mobileOnly={true}
+            />
+            <FooterLink
+              icon="github"
+              target="https://github.com/raquelmsmith"
+              anchor="Github"
+              secondaryAnchor="@raquelmsmith"
+            />
+            <FooterLink
+              icon="linkedin"
+              target="https://www.linkedin.com/in/raquelmsmith/"
+              anchor="LinkedIn"
+              secondaryAnchor="@raquelmsmith"
+            />
+            <FooterLink
+              icon="envelope"
+              target="mailto:hello@raquelmsmith.com"
+              anchor="Email"
+              secondaryAnchor="hello@raquelmsmith.com"
+            />
           </ul>
         </div>
       </footer>
