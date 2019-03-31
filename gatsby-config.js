@@ -62,6 +62,13 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-73283510-1`,
+        anonymize: true,
+      },
+    },
     `gatsby-plugin-sitemap`,
   ],
 }
