@@ -18,11 +18,10 @@ class FooterLink extends Component {
             font-size: 1rem;
           }
           svg {
-            margin-right: 0.5rem;
             display: block;
             margin: 0 auto 0.4rem;
             @media (min-width: 650px) {
-              margin-right: 0.5rem;
+              margin: 0 0.5rem -0.25rem 0;
               display: inline-block;
             }
           }
