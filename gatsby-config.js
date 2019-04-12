@@ -3,7 +3,7 @@ module.exports = {
     title: `Raquel M Smith`,
     description: `The home site for Raquel M Smith, a front-end Javascript and PHP developer based in San Luis Obispo, CA.`,
     author: `@raquelmsmith`,
-    siteUrl: `https://wizardly-spence-993265.netlify.com`,
+    siteUrl: `https://raquelmsmith.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,6 +17,61 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allWordpressPost } }) => {
+              return allWordpressPost.edges.map(edge => {
+                return Object.assign(
+                  {},
+                  {
+                    title: edge.node.title,
+                    description: edge.node.excerpt,
+                    date: edge.node.date,
+                    url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
+                    guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
+                  }
+                )
+              })
+            },
+            query: `
+              {
+                allWordpressPost(sort: { fields: [date], order: DESC }) {
+                  edges {
+                    node {
+                      title
+                      excerpt
+                      slug
+                    }
+                  }
+                }
+                site {
+                  siteMetadata {
+                    title
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Raquel M Smith - RSS Feed",
+          },
+        ],
+      },
+    },
     `gatsby-plugin-polished`,
     {
       resolve: `gatsby-plugin-manifest`,
