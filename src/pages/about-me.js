@@ -12,7 +12,7 @@ const AboutMe = props => (
   <Layout>
     <SEO
       title="About"
-      description="Raquel M Smith is a front-end developer with a passion for the mobile web."
+      description="Raquel M Smith is an effective product manager and front-end developer with a passion for the mobile web."
     />
     <div
       css={css`
@@ -47,14 +47,15 @@ const AboutMe = props => (
         <p>I'm Raquel. Nice to meet you :)</p>
 
         <p>
-          I'm a front-end developer based in sunny San Luis Obispo, CA. I'm
-          passionate about building amazing experiences for the mobile web, from
-          blazing performance to progressive web apps to solid mobile user
-          experiences.
+          I'm a product manager and front-end developer based in sunny San Luis Obispo, CA. I
+          create products that customers love and that move businesses forward. 
+          I'm passionate about using data-driven techniques to discover the perfect products 
+          for the right market, then bringing those products to life. 
         </p>
-
         <p>
-          This, of course, translates to the desktop as well, where
+          A continual focus of mine is building amazing experiences for the mobile web, from
+          blazing performance to progressive web apps to solid mobile user
+          experiences. This, of course, translates to the desktop as well, where
           optimizations for mobile improve site performance overall and result
           in a seamless device-to-device experience for users.
         </p>
@@ -77,28 +78,20 @@ const AboutMe = props => (
         <h2>Work</h2>
 
         <p>
-          I'm currently a full-time front-end developer for the Food Blogger Pro
-          family of brands. This includes:
+          I'm currently a product manager at <a href="https://www.dozuki.com/" rel="nofollow noopener noreferrer" target="_blank">Dozuki</a>, where we build software 
+          to help move manufacturing into the digital age. We work with enterprise 
+          companies like Pepsi, Patagonia, and Tiffany &amp; Co to streamline their 
+          documentation and help them achieve and maintain ISO compliance.
         </p>
 
-        <ul>
-          <li>
-            Pinch of Yum - a food blog that sees over 4 million visitors every
-            month
-          </li>
-          <li>
-            WP Tasty - a software company selling products created specifically
-            for food bloggers and their unique needs
-          </li>
-          <li>
-            Food Blogger Pro - an education website that helps people learn how
-            to start and run a food blog
-          </li>
-        </ul>
+        <p>
+          Previously, I worked for the Food Blogger Pro family of brands, which 
+          includes Pinch of Yum, Food Blogger Pro, and WP Tasty, as a product 
+          manager and front-end web developer.
+        </p>
 
         <p>
-          I've worked from home for the past 4 years, sometimes from a coworking
-          space, but mostly from my home office. I love the freedom and
+          I've worked remotely since 2015, mostly from my home office. I love the freedom and
           independence of remote work, but I also thrive on interaction with my
           team.
         </p>
@@ -110,7 +103,7 @@ const AboutMe = props => (
 
         <p>
           Finally, I love helping other people learn to build stuff for the web.
-          I volunteer time with bloggers to help them learn how to get their
+          I previously volunteered time with bloggers to help them learn how to get their
           websites out into the world and seen by millions - and that's not an
           exaggeration. I also volunteer with a local coding education
           organization, <a href="https://www.meetup.com/codeslo/">CodeSLO</a>,
@@ -133,8 +126,7 @@ const AboutMe = props => (
           I eventually wanted to change a few things about my website, so I
           searched around until I found the stylesheet and made some minor edits
           there. It was thrilling! Soon I was spending more time fiddling with
-          my website than I was publishing, and I knew I had found my true
-          calling.{" "}
+          my website than I was publishing, and I knew that working in the web was my calling.
         </p>
 
         <p>
@@ -142,9 +134,11 @@ const AboutMe = props => (
           careers and do something more in line with my passions. I had been
           volunteering time on the Food Blogger Pro forums helping other
           bloggers with their website woes, and when the folks at Food Blogger
-          Pro offered me a job, I jumped at the opportunity. I've been happily
-          employed there ever since, moving from forum moderator to web admin to
-          front-end developer in rather quick succession.
+          Pro offered me a job, I jumped at the opportunity. I quickly moved from 
+          forum moderator to web admin to front-end developer to product manager. 
+          While my time with the Food Blogger Pro team has come to an end, I am so 
+          grateful for the opportunity Bjork and Lindsay gave me to explore and 
+          develop my passions for product management and front-end development.
         </p>
 
         <h2>Life</h2>
@@ -176,7 +170,7 @@ const AboutMe = props => (
               }
             `}
             data-pin-nopin="true"
-            alt="Headshot of Raquel M Smith"
+            alt="Kacey"
             fluid={props.data.kacey.childImageSharp.fluid}
           />
 
@@ -194,7 +188,7 @@ const AboutMe = props => (
               }
             `}
             data-pin-nopin="true"
-            alt="Headshot of Raquel M Smith"
+            alt="Dedas, my black lab"
             fluid={props.data.dedas.childImageSharp.fluid}
           />
 
@@ -211,7 +205,7 @@ const AboutMe = props => (
               }
             `}
             data-pin-nopin="true"
-            alt="Headshot of Raquel M Smith"
+            alt="My husband and me wearing bicycle helmets at Montana De Oro in Los Osos, CA"
             fluid={props.data.bikes.childImageSharp.fluid}
           />
         </div>
@@ -222,7 +216,7 @@ const AboutMe = props => (
         </p>
 
         <p>
-          I'm the proud mom of a beautiful little girl named Kacey and dog mom
+          I'm the proud mom of two beautiful little girls named Kacey and Norah and dog mom
           to a black lap pup named Dedas.{" "}
         </p>
 

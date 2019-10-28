@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Raquel M Smith`,
-    description: `The home site for Raquel M Smith, a front-end Javascript and PHP developer based in San Luis Obispo, CA.`,
+    description: `The home site for Raquel M Smith, a product manager and front-end developer based in San Luis Obispo, CA.`,
     author: `@raquelmsmith`,
     siteUrl: `https://raquelmsmith.com`,
   },

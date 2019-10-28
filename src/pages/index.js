@@ -16,7 +16,7 @@ const IndexPage = () => (
     <h1
       css={css`
         font-size: 5rem;
-        margin-top: 3rem;
+        margin-top: 4rem;
       `}
     >
       Hi! I'm Raquel.
@@ -29,8 +29,8 @@ const IndexPage = () => (
         line-height: 1.6;
       `}
     >
-      I'm a front-end developer based in San Luis Obispo, CA. I build
-      mobile-optimized websites, mostly using modern Javascript and PHP.
+      I'm a product manager and front-end developer based in San Luis Obispo, CA. 
+      I move business forward by leading the creation of data-driven products that customers love.
     </p>
     <p
       css={css`
@@ -44,37 +44,24 @@ const IndexPage = () => (
         }
       `}
     >
-      <Link to="/about-me">Learn more about me.</Link>
+      <Link to="/about-me">Learn more about me</Link> or <Link to="/projects">view projects.</Link>
     </p>
     <div
       css={css`
         margin-bottom: 3rem;
       `}
     >
-      <h2>Technology</h2>
+      <h2>Product</h2>
+      <TagList
+        tags={["saas", "enterprise", "b2b", "b2c"]}
+      />
+      <h2
+      css={css`
+        margin-top: 2rem;
+      `}>Technology</h2>
       <TagList
         tags={["javascript", "reactjs", "gatsbyjs", "es6", "css3", "php"]}
       />
-      <p
-        css={css`
-          max-width: 900px;
-          font-size: 1.3rem;
-          margin: 1rem 0 4rem;
-          line-height: 1.6;
-          a {
-            text-decoration: none;
-            ${underline(
-              colors.grey200,
-              colors.teal,
-              colors.teal,
-              "100%",
-              "2px"
-            )}
-          }
-        `}
-      >
-        <Link to="/projects">View projects.</Link>
-      </p>
     </div>
   </Layout>
 )
