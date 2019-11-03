@@ -36,7 +36,7 @@
     "formik": "^2.0.3",
     "gatsby-plugin-remote-images": "^1.0.1",
     "gatsby-source-wordpress": "^3.0.41",
-    "html-react-parser": "^0.6.3",
+    "html-react-parser": "^0.9.1",
     "prettier": "^1.16.4",
     "yup": "^0.26.10"
   },
