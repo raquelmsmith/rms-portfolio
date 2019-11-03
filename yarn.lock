@@ -5248,7 +5248,7 @@ gatsby-plugin-gtag@^1.0.10:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.11.tgz#1eb9487ce733c4f909703323c1ab7356228c391f"
   integrity sha512-tWEOJUXdVwc2SihdsofBkA3s4dR5rop39+BPVcLf4h7g/C14UrpeEs0p7/qzmLzhI2ETek0evyMzzS8g9xx9+g==
 
-gatsby-plugin-manifest@^2.2.25:
+gatsby-plugin-manifest@^2.2.26:
   version "2.2.26"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.26.tgz#040a7dc2ab54e64cc97481adfb498e5dc8caade4"
   integrity sha512-G7QfmmbjJ9QwWu2wjAdrnFR/s3ber03CsXbCERMysv9mgv3WShOvNaZqZ7KEIaGMe1fYdwrZpy/TpJYTYoN9Yw==
