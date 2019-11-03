@@ -14,7 +14,7 @@
     "gatsby-plugin-feed": "^2.3.19",
     "gatsby-plugin-gtag": "^1.0.10",
     "gatsby-plugin-manifest": "^2.2.26",
-    "gatsby-plugin-offline": "^2.0.24",
+    "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-polished": "^1.0.3",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-robots-txt": "^1.4.0",
