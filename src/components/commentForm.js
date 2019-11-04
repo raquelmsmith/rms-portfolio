@@ -73,7 +73,7 @@ class CommentForm extends Component {
           onSubmit={values => {
             this.setState({ isSubmitting: true })
             // same shape as initial values
-            let target = `https://raquelmsmith.com/wp-json/wp/v2/comments`
+            let target = `https://api.raquelmsmith.com/wp-json/wp/v2/comments`
             fetch(target, {
               method: "POST",
               headers: {
