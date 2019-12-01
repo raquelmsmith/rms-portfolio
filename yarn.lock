@@ -5589,7 +5589,7 @@ gatsby-cli@^2.8.14:
     ink "^2.5.0"
     ink-spinner "^3.0.1"
 
-gatsby-core-utils@^1.0.17, gatsby-core-utils@^1.0.21:
+gatsby-core-utils@^1.0.21:
   version "1.0.21"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.0.21.tgz#e14f6c3285faaf20c72cbfa0bbe16a95374b367b"
   integrity sha512-rrJFMKHuEC6tlZdsihtLLB/qafEFyX/z7+gbBLLQDmAkISrQ7bes9K8kiyvr3IsdA3SH0ErxOcqpSZaBPQekwA==
@@ -5658,15 +5658,15 @@ gatsby-plugin-gtag@^1.0.10:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.11.tgz#1eb9487ce733c4f909703323c1ab7356228c391f"
   integrity sha512-tWEOJUXdVwc2SihdsofBkA3s4dR5rop39+BPVcLf4h7g/C14UrpeEs0p7/qzmLzhI2ETek0evyMzzS8g9xx9+g==
 
-gatsby-plugin-manifest@^2.2.26:
-  version "2.2.26"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.26.tgz#040a7dc2ab54e64cc97481adfb498e5dc8caade4"
-  integrity sha512-G7QfmmbjJ9QwWu2wjAdrnFR/s3ber03CsXbCERMysv9mgv3WShOvNaZqZ7KEIaGMe1fYdwrZpy/TpJYTYoN9Yw==
+gatsby-plugin-manifest@^2.2.30:
+  version "2.2.30"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.30.tgz#6fef1c34fe1624a60b51b87374f66c063a857e11"
+  integrity sha512-g+QFA6HB9iKCI10Dl51BazMg+ke+DVm+bxMaItBxJD0w8JKByYprMjkz/iPXdYI6YI0zpLl2myCztOn6ngR1Og==
   dependencies:
-    "@babel/runtime" "^7.6.3"
-    gatsby-core-utils "^1.0.17"
+    "@babel/runtime" "^7.7.4"
+    gatsby-core-utils "^1.0.21"
     semver "^5.7.1"
-    sharp "^0.23.2"
+    sharp "^0.23.3"
 
 gatsby-plugin-offline@^3.0.25:
   version "3.0.25"
@@ -11227,7 +11227,7 @@ shallowequal@^1.0.1, shallowequal@^1.1.0:
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
 
-sharp@^0.23.2, sharp@^0.23.3:
+sharp@^0.23.3:
   version "0.23.3"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.23.3.tgz#549770a4c671b9bd221f00639452a3eb803a0ed1"
   integrity sha512-pjT4zyviQteXMC1Z8USIiSwQFQbZTlU5J59/UoygE25hh+sSb7PSYI/MZ2MCB1COtxWQuoUAaG3TYIOLon26Mg==
