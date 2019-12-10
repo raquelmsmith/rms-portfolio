@@ -35,7 +35,7 @@
   "devDependencies": {
     "formik": "^2.0.6",
     "gatsby-plugin-remote-images": "^1.0.1",
-    "gatsby-source-wordpress": "^3.1.50",
+    "gatsby-source-wordpress": "^3.1.53",
     "html-react-parser": "^0.10.0",
     "prettier": "^1.16.4",
     "yup": "^0.27.0"
