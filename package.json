@@ -22,7 +22,7 @@
     "gatsby-plugin-sitemap": "^2.0.11",
     "gatsby-plugin-typography": "^2.2.7",
     "gatsby-source-filesystem": "^2.1.42",
-    "gatsby-transformer-sharp": "^2.3.6",
+    "gatsby-transformer-sharp": "^2.4.3",
     "polished": "^3.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
