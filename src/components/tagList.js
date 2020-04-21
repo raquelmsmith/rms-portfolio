@@ -36,14 +36,14 @@ class TagList extends Component {
           ${this.props.style === `solid`
             ? `
             & li {
-              background-color: ${colors.grey500};
-              color: ${colors.white};
-              border: 1px solid ${colors.grey500};
+              background-color: ${colors.teal200};
+              color: ${colors.teal800};
+              border: 1px solid ${colors.teal200};
               &:before {
                 content: "#";
                 margin-right: 2px;
                 font-weight: bold;
-                color: ${colors.white};
+                color: ${colors.teal800};
               }
             }
             `

@@ -148,6 +148,8 @@ class BookIndex extends Component {
                       css={css`
                       display: inline-block;
                       margin-left: 10px;
+                      position: relative;
+                      top: -3px;
                     `}
                     >
                       <TagList tags={node.tags.map(tag => tag.name)} style={`solid`} size={`small`} />
