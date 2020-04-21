@@ -33,6 +33,31 @@ class TagList extends Component {
               color: ${colors.teal};
             }
           }
+          ${this.props.style === `solid`
+            ? `
+            & li {
+              background-color: ${colors.grey500};
+              color: ${colors.white};
+              border: 1px solid ${colors.grey500};
+              &:before {
+                content: "#";
+                margin-right: 2px;
+                font-weight: bold;
+                color: ${colors.white};
+              }
+            }
+            `
+            : ``}
+            ${this.props.size === `small`
+            ? `
+            & li {
+              font-size: 0.6em;
+              padding: 0 0.45rem;
+              margin-top: -3px;
+              margin-bottom: 0;
+            }
+            `
+            : ``}
         `}
       >
         {this.props.tags.map(tag => (

@@ -101,6 +101,7 @@ module.exports = {
           "**/tags",
           "**/taxonomies",
           "**/projects",
+          "**/books",
         ],
       },
     },

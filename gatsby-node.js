@@ -28,6 +28,23 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressWpBooks {
+        edges {
+          node {
+            title
+            acf {
+              author
+              favorite
+              link
+              read_status
+            }
+            tags {
+              name
+            }
+            status
+          }
+        }
+      }
     }
   `)
 
