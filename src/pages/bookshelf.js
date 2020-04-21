@@ -47,10 +47,16 @@ class BookIndex extends Component {
             <div
               css={css`
                 background: ${colors.white};
-                padding: 3rem;
+                padding: 1rem;
                 font-size: 1.1rem;
                 line-height: 1.6;
                 margin-bottom: 3rem;
+                @media (min-width: 411px) {
+                  padding: 2rem;
+                }
+                @media (min-width: 768px) {
+                  padding: 3rem;
+                }
                 a {
                   color: ${colors.grey800};
                   text-decoration: none;
@@ -96,7 +102,8 @@ class BookIndex extends Component {
             >
               <p>
                 This is a short list of some of the books I have on my bookshelf, as well as some links to online publications I enjoy. 
-                A green check means I've already read it or, in the case of a blog, I consistently read it. Otherwise, it's on my to-read list.
+                A green check means I've already read it or, in the case of a blog, I consistently read it. Otherwise, it's on my 
+                to-read list. A star means it's a favorite of mine.
               </p>
               <ul
                 css={css`
@@ -107,7 +114,14 @@ class BookIndex extends Component {
                 <li
                   css={css`
                     margin-bottom: 25px;
+                    margin-left: 1rem;
                     list-style-type: none;
+                    @media (min-width: 411px) {
+                      margin-left: 2rem;
+                    }
+                    @media (min-width: 768px) {
+                      margin-left: 3rem;
+                    }
                   `}
                 >
                   <div
@@ -126,6 +140,22 @@ class BookIndex extends Component {
                        }
                       `}
                     >
+                      {node.acf.favorite[0] ? 
+                        <Icon
+                          name="star"
+                          width="1.5rem"
+                          height="1.2rem"
+                          fill={colors.salmon200}
+                          css={css`
+                            margin-left: -1.7rem;
+                            margin-right: 0.2rem;
+                            margin-bottom: -5px;
+                            svg {
+                              margin-bottom: -4px;
+                            }
+                          `}
+                        />
+                      : ``}
                       <Icon
                         name="check"
                         width="1.2rem"
@@ -140,14 +170,14 @@ class BookIndex extends Component {
                     <span
                       css={css`
                         color: ${colors.grey500};
+                        margin-right: 10px;
                       `}
                     >
-                    {` by ${node.acf.author}`}
+                      {` by ${node.acf.author}`}
                     </span>
                     <div
                       css={css`
                       display: inline-block;
-                      margin-left: 10px;
                       position: relative;
                       top: -3px;
                     `}

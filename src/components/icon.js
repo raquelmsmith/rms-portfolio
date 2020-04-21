@@ -6,6 +6,7 @@ import Github from "../images/icons/github"
 import LinkedIn from "../images/icons/linkedin"
 import Pencil from "../images/icons/pencil"
 import Person from "../images/icons/person"
+import Star from "../images/icons/star"
 
 const Icon = props => {
   switch (props.name) {
@@ -23,6 +24,8 @@ const Icon = props => {
       return <Pencil {...props} />
     case "person":
       return <Person {...props} />
+    case "star":
+      return <Star {...props} />
     default:
       return <div />
   }

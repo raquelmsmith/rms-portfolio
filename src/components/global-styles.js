@@ -8,6 +8,7 @@ export const colors = {
   teal: "#a8dcd1",
   teal600: "#33ccac",
   teal800: "#397d6f",
+  salmon200: "#ffb0b0",
   salmon: "#ff8585",
 }
 
