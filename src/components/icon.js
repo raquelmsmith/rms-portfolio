@@ -1,5 +1,6 @@
 import React from "react"
 import Asterisk from "../images/icons/asterisk"
+import Book from "../images/icons/book"
 import Check from "../images/icons/checkCircle"
 import Envelope from "../images/icons/envelope"
 import Github from "../images/icons/github"
@@ -12,6 +13,8 @@ const Icon = props => {
   switch (props.name) {
     case "asterisk":
       return <Asterisk {...props} />
+    case "book":
+      return <Book {...props} />
     case "check":
       return <Check {...props} />
     case "envelope":

@@ -36,6 +36,13 @@ class FooterLink extends Component {
                   display: flex;
                 }
             `}
+          ${this.props.desktopOnly
+            ? `
+              @media (max-width: 650px) {
+                display: none;
+              }
+            `
+            : ``}
         `}
       >
         {this.props.isInternal ? (

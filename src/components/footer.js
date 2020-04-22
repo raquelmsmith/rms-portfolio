@@ -69,6 +69,13 @@ class Footer extends Component {
               mobileOnly={true}
             />
             <FooterLink
+              icon="book"
+              isInternal={true}
+              target="/bookshelf/"
+              anchor="Bookshelf"
+              mobileOnly={true}
+            />
+            <FooterLink
               icon="pencil"
               isInternal={true}
               target="/blog/"
@@ -80,6 +87,7 @@ class Footer extends Component {
               target="https://github.com/raquelmsmith"
               anchor="Github"
               secondaryAnchor="@raquelmsmith"
+              desktopOnly={true}
             />
             <FooterLink
               icon="linkedin"
