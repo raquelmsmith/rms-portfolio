@@ -156,6 +156,10 @@ class BookIndex extends Component {
                       position: absolute;
                       left: 1.2rem;
                       top: 2px;
+                      display: none;
+                      @media (min-width: 550px) {
+                        display: inline-block;
+                      }
                     `}
                   >
                     ({data.allWordpressWpBooks.edges.filter(edge => edge.node.acf.read_status === "Read").length})
@@ -184,6 +188,10 @@ class BookIndex extends Component {
                       position: absolute;
                       left: 1.3rem;
                       top: 2px;
+                      display: none;
+                      @media (min-width: 550px) {
+                        display: inline-block;
+                      }
                     `}
                   >
                     ({data.allWordpressWpBooks.edges.filter(edge => !!edge.node.acf.favorite[0] === true).length})
