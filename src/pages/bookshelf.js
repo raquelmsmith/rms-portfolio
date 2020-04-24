@@ -108,6 +108,11 @@ class BookIndex extends Component {
               <ul
                 css={css`
                   margin-top: 3rem;
+                  margin-left: 0;
+                  li {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                  }
                 `}
             >
               <li
@@ -119,7 +124,6 @@ class BookIndex extends Component {
                   padding-bottom: 0.5rem;
                   margin-bottom: 2rem;
                   color: ${colors.grey500};
-                  font-size: 0.8rem;
                 `}
               >
                 <div
@@ -135,6 +139,7 @@ class BookIndex extends Component {
                     display: flex;
                     align-items: center;
                     position: relative;
+                    font-size: 0.8rem;
                   `}
                 >
                   <Icon
@@ -150,9 +155,10 @@ class BookIndex extends Component {
                       color: ${colors.teal};
                       position: absolute;
                       left: 1.2rem;
+                      top: 2px;
                     `}
                   >
-                    ({data.allWordpressWpBooks.edges.filter(edge => edge.node.acf.read_status == "Read").length})
+                    ({data.allWordpressWpBooks.edges.filter(edge => edge.node.acf.read_status === "Read").length})
                   </span>
                 </div>
                 <div
@@ -161,6 +167,7 @@ class BookIndex extends Component {
                     display: flex;
                     align-items: center;
                     position: relative;
+                    font-size: 0.8rem;
                   `}
                 >
                   <Icon
@@ -176,9 +183,10 @@ class BookIndex extends Component {
                       color: ${colors.salmon200};
                       position: absolute;
                       left: 1.3rem;
+                      top: 2px;
                     `}
                   >
-                    ({data.allWordpressWpBooks.edges.filter(edge => !!edge.node.acf.favorite[0] == true).length})
+                    ({data.allWordpressWpBooks.edges.filter(edge => !!edge.node.acf.favorite[0] === true).length})
                   </span>
                 </div>
               </li>
