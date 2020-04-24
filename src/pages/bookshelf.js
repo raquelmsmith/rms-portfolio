@@ -110,60 +110,93 @@ class BookIndex extends Component {
                   margin-top: 3rem;
                 `}
             >
+              <li
+                css={css`
+                  display: grid;
+                  grid-template-columns: repeat(8, minmax(0, 1fr));
+                  gap: 1rem;
+                  border-bottom: 4px solid ${colors.grey200};
+                  padding-bottom: 0.5rem;
+                  margin-bottom: 2rem;
+                  color: ${colors.grey500};
+                  font-size: 0.8rem;
+                `}
+              >
+                <div
+                  css={css`
+                    grid-column: span 6 / span 6;
+                  `}
+                >
+                  {data.allWordpressWpBooks.edges.length} books
+                </div>
+                <div
+                  css={css`
+                    justify-self: center;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                  `}
+                >
+                  <Icon
+                    name="check"
+                    width="1.2rem"
+                    height="1.2rem"
+                    fill={colors.teal}
+                  />
+                  <span
+                    css={css`
+                      margin-left: 0.5rem;
+                      margin-top: 2px;
+                      color: ${colors.teal};
+                      position: absolute;
+                      left: 1.2rem;
+                    `}
+                  >
+                    ({data.allWordpressWpBooks.edges.filter(edge => edge.node.acf.read_status == "Read").length})
+                  </span>
+                </div>
+                <div
+                  css={css`
+                    justify-self: center;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                  `}
+                >
+                  <Icon
+                    name="star"
+                    width="1.5rem"
+                    height="1.2rem"
+                    fill={colors.salmon200}
+                  />
+                  <span
+                    css={css`
+                      margin-left: 0.5rem;
+                      margin-top: 2px;
+                      color: ${colors.salmon200};
+                      position: absolute;
+                      left: 1.3rem;
+                    `}
+                  >
+                    ({data.allWordpressWpBooks.edges.filter(edge => !!edge.node.acf.favorite[0] == true).length})
+                  </span>
+                </div>
+              </li>
               {data.allWordpressWpBooks.edges.map(({ node }) => (
                 <li
                   css={css`
-                    margin-bottom: 25px;
-                    margin-left: 1rem;
+                    margin-bottom: 3rem;
                     list-style-type: none;
-                    @media (min-width: 411px) {
-                      margin-left: 2rem;
-                    }
-                    @media (min-width: 768px) {
-                      margin-left: 3rem;
-                    }
+                    display: grid;
+                    grid-template-columns: repeat(8, minmax(0, 1fr));
+                    gap: 1rem;
                   `}
                 >
                   <div
                     css={css`
-                    margin-right: 15px;
+                    grid-column: span 6 / span 6;
                     `}
                     >
-                    {node.acf.read_status === "Read" ? 
-                    <span
-                      css={css`
-                       margin-left: -30px;
-                       margin-right: 10px;
-                       margin-bottom: -5px;
-                       svg {
-                        margin-bottom: -4px;
-                       }
-                      `}
-                    >
-                      {node.acf.favorite[0] ? 
-                        <Icon
-                          name="star"
-                          width="1.5rem"
-                          height="1.2rem"
-                          fill={colors.salmon200}
-                          css={css`
-                            margin-left: -1.7rem;
-                            margin-right: 0.2rem;
-                            margin-bottom: -5px;
-                            svg {
-                              margin-bottom: -4px;
-                            }
-                          `}
-                        />
-                      : ``}
-                      <Icon
-                        name="check"
-                        width="1.2rem"
-                        height="1.2rem"
-                        fill={colors.teal}
-                      />
-                    </span>
-                      : ``}
                     <a href={node.acf.link} target="_blank" rel="noopener noreferrer">
                       {node.title}
                     </a>
@@ -177,15 +210,7 @@ class BookIndex extends Component {
                     </span>
                     <div
                       css={css`
-                      display: inline-block;
-                      position: relative;
-                      top: -3px;
-                    `}
-                    >
-                      <TagList tags={node.tags.map(tag => tag.name)} style={`solid`} size={`small`} />
-                    </div>
-                    <div
-                      css={css`
+                        margin-bottom: 0.5rem;
                         .more-link-wrapper {
                           display: none;
                         }
@@ -197,8 +222,48 @@ class BookIndex extends Component {
                       `}
                       dangerouslySetInnerHTML={{ __html: node.excerpt }}
                     />
+                    <TagList tags={node.tags.map(tag => tag.name)} style={`solid`} size={`small`} />
                   </div>
-                  
+                  <div
+                    css={css`
+                        justify-self: center;
+                    `}
+                  >
+                  {node.acf.read_status === "Read" ? 
+                    <Icon
+                      name="check"
+                      width="1.2rem"
+                      height="1.2rem"
+                      fill={colors.teal}
+                      css={css`
+                      margin: 0 auto -5px;
+                      svg {
+                      margin: 0 auto -4px;
+                      }
+                    `}
+                    />
+                    : ``}
+                  </div>
+                  <div
+                    css={css`
+                      justify-self: center;
+                  `}
+                  >
+                    {node.acf.favorite[0] ? 
+                      <Icon
+                        name="star"
+                        width="1.5rem"
+                        height="1.2rem"
+                        fill={colors.salmon200}
+                        css={css`
+                          margin-bottom: -5px;
+                          svg {
+                            margin-bottom: -4px;
+                          }
+                        `}
+                      />
+                    : ``}
+                  </div>
                 </li>
                   ))}
               </ul>
