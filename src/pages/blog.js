@@ -93,7 +93,7 @@ class BlogIndex extends Component {
                 }
               `}
             >
-              <Link to={`${node.slug}`}>
+              <Link to={`blog/${node.slug}`}>
                 <h3>{node.title}</h3>
               </Link>
               <div
