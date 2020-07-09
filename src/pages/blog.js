@@ -105,7 +105,7 @@ class BlogIndex extends Component {
                 dangerouslySetInnerHTML={{ __html: node.excerpt }}
               />
               <Link
-                to={`${node.slug}`}
+                to={`blog/${node.slug}`}
                 aria-label={`Continue reading ${node.title}`}
               >
                 <button
