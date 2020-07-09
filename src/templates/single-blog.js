@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import parse from "html-react-parser"
+import ScriptTag from 'react-script-tag';
 
 import Layout from "../components/layout"
 import Article from "../components/article"
@@ -41,6 +42,7 @@ class SingleBlog extends Component {
             `}
           />
           <Article>{parse(post.content)}</Article>
+          <ScriptTag isHydrating={true} async type="text/javascript" data-uid="d305a83a76" src="https://raquelmsmith.ck.page/d305a83a76/index.js" />
         </div>
         <BlogComments comments={comments} post={post} />
       </Layout>
