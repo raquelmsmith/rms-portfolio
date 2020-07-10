@@ -43,7 +43,7 @@ class Projects extends Component {
             <Card
               title={node.title}
               description={node.excerpt}
-              target={`projects/${node.slug}`}
+              target={`/projects/${node.slug}`}
               tags={node.tags.map(tag => tag.name)}
             >
               <Img
