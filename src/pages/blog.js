@@ -93,7 +93,7 @@ class BlogIndex extends Component {
                 }
               `}
             >
-              <Link to={`blog/${node.slug}`}>
+              <Link to={`/blog/${node.slug}`}>
                 <h3>{node.title}</h3>
               </Link>
               <div
@@ -105,7 +105,7 @@ class BlogIndex extends Component {
                 dangerouslySetInnerHTML={{ __html: node.excerpt }}
               />
               <Link
-                to={`blog/${node.slug}`}
+                to={`/blog/${node.slug}`}
                 aria-label={`Continue reading ${node.title}`}
               >
                 <button

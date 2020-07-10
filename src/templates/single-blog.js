@@ -10,6 +10,15 @@ import SEO from "../components/seo"
 import BlogComments from "../components/comments"
 
 class SingleBlog extends Component {
+
+  componentDidMount(){
+    const script=document.createElement('script')
+    script.src="https://raquelmsmith.ck.page/d305a83a76/index.js"
+    script.async=true
+    script.setAttribute('data-uid', 'd305a83a76');
+    this.instance.appendChild(script)
+  }
+
   render() {
     const post = this.props.data.wordpressPost
     const comments = this.props.data.allWordpressWpComments
@@ -40,6 +49,7 @@ class SingleBlog extends Component {
               }
             `}
           />
+          <div ref={el => (this.instance = el)} className="convertkit"></div>
           <Article>{parse(post.content)}</Article>
         </div>
         <BlogComments comments={comments} post={post} />
