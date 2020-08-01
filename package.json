@@ -8,7 +8,7 @@
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.23",
     "babel-plugin-polished": "^1.1.0",
-    "gatsby": "^2.24.1",
+    "gatsby": "^2.24.23",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-emotion": "^4.1.18",
     "gatsby-plugin-feed": "^2.5.11",
