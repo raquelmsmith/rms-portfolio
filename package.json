@@ -38,7 +38,7 @@
     "gatsby-source-wordpress": "^3.3.21",
     "html-react-parser": "^0.13.0",
     "prettier": "^2.0.4",
-    "yup": "^0.29.1"
+    "yup": "^0.29.2"
   },
   "keywords": [
     "gatsby"
