@@ -13,9 +13,9 @@ class SingleBlog extends Component {
 
   componentDidMount(){
     const script=document.createElement('script')
-    script.src="https://raquelmsmith.ck.page/d305a83a76/index.js"
+    script.src="https://raquelmsmith.ck.page/b5b28b1396/index.js"
     script.async=true
-    script.setAttribute('data-uid', 'd305a83a76');
+    script.setAttribute('data-uid', 'b5b28b1396');
     this.instance.appendChild(script)
   }
 
