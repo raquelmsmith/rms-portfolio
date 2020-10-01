@@ -33,7 +33,7 @@
     "typography-theme-lincoln": "^0.16.18"
   },
   "devDependencies": {
-    "formik": "^2.1.4",
+    "formik": "^2.1.6",
     "gatsby-plugin-remote-images": "^1.0.1",
     "gatsby-source-wordpress": "^3.3.21",
     "html-react-parser": "^0.13.0",
