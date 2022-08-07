@@ -29,7 +29,7 @@ const IndexPage = () => (
         line-height: 1.6;
       `}
     >
-      I'm a product manager and front-end developer based in San Luis Obispo, CA. 
+      I'm a product manager and software engineer based in San Luis Obispo, CA. 
       I move business forward by leading the creation of data-driven products that customers love.
     </p>
     <p
