@@ -116,7 +116,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: "WpProject",
+        nodeType: "wpProject",
         imagePath: "featuredImage.node.sourceUrl",
       },
     },
