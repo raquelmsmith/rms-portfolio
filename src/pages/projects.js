@@ -44,11 +44,11 @@ class Projects extends Component {
               title={node.title}
               description={node.excerpt}
               target={`/projects/${node.slug}`}
-              tags={node.tags.map(tag => tag.name)}
+              tags={node.tags.nodes.map(tag => tag.name)}
             >
               <Img
-                alt={node.featuredImage.node.altText}
-                fluid={node.featuredImage.node.localFile.childImageSharp.fluid}
+                alt={node.featuredImage?.node.altText}
+                fluid={node.featuredImage?.node.localFile.childImageSharp.fluid}
               />
             </Card>
           ))}

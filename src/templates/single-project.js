@@ -13,13 +13,13 @@ import { colors } from "../components/global-styles"
 
 class SingleProject extends Component {
   render() {
-    const project = this.props.data.WpProject
+    const project = this.props.data.wpProject
     return (
       <Layout>
         <SEO
           title={project.seo.title}
           description={project.seo.metaDesc}
-          keywords={project.tags.map(tag => tag.name)}
+          keywords={project.tags.nodes.map(tag => tag.name)}
         />
         <div
           css={css`
@@ -59,7 +59,7 @@ class SingleProject extends Component {
               padding-top: 3rem;
             `}
           >
-            <TagList tags={project.tags.map(tag => tag.name)} />
+            <TagList tags={project.tags.nodes.map(tag => tag.name)} />
           </section>
           <Article>{parse(project.content)}</Article>
         </div>
