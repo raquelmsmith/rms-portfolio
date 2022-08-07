@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allWpPost {
         edges {
           node {
+            id
             databaseId
             slug
           }
