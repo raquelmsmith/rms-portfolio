@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import { colors } from "../components/global-styles"
 
 class TagList extends Component {

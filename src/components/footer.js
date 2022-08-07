@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import { colors, underline } from "../components/global-styles"
 import FooterLink from "./footerLink"

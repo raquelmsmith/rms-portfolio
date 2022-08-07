@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import Header from "./header"
 import Footer from "./footer"

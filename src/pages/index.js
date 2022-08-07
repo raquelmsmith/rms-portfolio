@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import { colors, underline } from "../components/global-styles"
 import Layout from "../components/layout"

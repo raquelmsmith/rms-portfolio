@@ -1,7 +1,7 @@
 import { React, Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -131,7 +131,7 @@ class BookIndex extends Component {
                     grid-column: span 6 / span 6;
                   `}
                 >
-                  {data.allWordpressWpBooks.edges.length} books
+                  {data.allWpBook.edges.length} books
                 </div>
                 <div
                   css={css`
@@ -162,7 +162,7 @@ class BookIndex extends Component {
                       }
                     `}
                   >
-                    ({data.allWordpressWpBooks.edges.filter(edge => edge.node.acf.read_status === "Read").length})
+                    ({data.allWpBook.edges.filter(edge => edge.node.bookDetails.readStatus === true).length})
                   </span>
                 </div>
                 <div
@@ -194,11 +194,11 @@ class BookIndex extends Component {
                       }
                     `}
                   >
-                    ({data.allWordpressWpBooks.edges.filter(edge => !!edge.node.acf.favorite[0] === true).length})
+                    ({data.allWpBook.edges.filter(edge => !!edge.node.bookDetails.favorite === true).length})
                   </span>
                 </div>
               </li>
-              {data.allWordpressWpBooks.edges.map(({ node }) => (
+              {data.allWpBook.edges.map(({ node }) => (
                 <li
                   css={css`
                     margin-bottom: 3rem;
@@ -213,7 +213,7 @@ class BookIndex extends Component {
                     grid-column: span 6 / span 6;
                     `}
                     >
-                    <a href={node.acf.link} target="_blank" rel="noopener noreferrer">
+                    <a href={node.bookDetails.link} target="_blank" rel="noopener noreferrer">
                       {node.title}
                     </a>
                     <span
@@ -222,7 +222,7 @@ class BookIndex extends Component {
                         margin-right: 10px;
                       `}
                     >
-                      {` by ${node.acf.author}`}
+                      {` by ${node.bookDetails.author}`}
                     </span>
                     <div
                       css={css`
@@ -238,14 +238,14 @@ class BookIndex extends Component {
                       `}
                       dangerouslySetInnerHTML={{ __html: node.excerpt }}
                     />
-                    <TagList tags={node.tags.map(tag => tag.name)} style={`solid`} size={`small`} />
+                    <TagList tags={node.tags.nodes.map(tag => tag.name)} style={`solid`} size={`small`} />
                   </div>
                   <div
                     css={css`
                         justify-self: center;
                     `}
                   >
-                  {node.acf.read_status === "Read" ? 
+                  {node.bookDetails.readStatus === true ? 
                     <Icon
                       name="check"
                       width="1.2rem"
@@ -265,7 +265,7 @@ class BookIndex extends Component {
                       justify-self: center;
                   `}
                   >
-                    {node.acf.favorite[0] ? 
+                    {node.bookDetails.favorite ? 
                       <Icon
                         name="star"
                         width="1.5rem"
@@ -300,18 +300,20 @@ export default BookIndex
 
 export const pageQuery = graphql`
   query {
-    allWordpressWpBooks {
+    allWpBook {
       edges {
         node {
           title
-          acf {
+          bookDetails {
             author
             favorite
             link
-            read_status
+            readStatus
           }
           tags {
-            name
+            nodes {
+              name
+            }
           }
           status
           excerpt

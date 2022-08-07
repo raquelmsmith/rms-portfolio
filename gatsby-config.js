@@ -34,8 +34,8 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allWordpressPost } }) => {
-              return allWordpressPost.edges.map(edge => {
+            serialize: ({ query: { site, allWpPost } }) => {
+              return allWpPost.edges.map(edge => {
                 return Object.assign(
                   {},
                   {
@@ -50,7 +50,7 @@ module.exports = {
             },
             query: `
               {
-                allWordpressPost(sort: { fields: [date], order: DESC }) {
+                allWpPost(sort: { fields: [date], order: DESC }) {
                   edges {
                     node {
                       title
@@ -89,27 +89,35 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `api.raquelmsmith.com`,
-        protocol: `https`,
-        hostingWPCOM: false,
-        useACF: false,
-        includedRoutes: [
-          "**/categories",
-          "**/comments",
-          "**/posts",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/projects",
-          "**/books",
-        ],
+        url: `https://rte.lmt.mybluehost.me/graphql`,
+        schema: {
+          //Prefixes all WP Types with "Wp" so "Post and allPost" become "WpPost and allWpPost".
+          typePrefix: `Wp`,
+        },
+        develop: {
+          //caches media files outside of Gatsby's default cache an thus allows them to persist through a cache reset.
+          hardCacheMediaFiles: true,
+        }
+        // protocol: `https`,
+        // hostingWPCOM: false,
+        // useACF: false,
+        // includedRoutes: [
+        //   "**/categories",
+        //   "**/comments",
+        //   "**/posts",
+        //   "**/media",
+        //   "**/tags",
+        //   "**/taxonomies",
+        //   "**/projects",
+        //   "**/books",
+        // ],
       },
     },
     {
       resolve: `gatsby-plugin-remote-images`,
       options: {
-        nodeType: "wordpressWpProjects",
-        imagePath: "featured_media.source_url",
+        nodeType: "WpProject",
+        imagePath: "featuredImage.node.sourceUrl",
       },
     },
     {
