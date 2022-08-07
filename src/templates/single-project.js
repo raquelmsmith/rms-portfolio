@@ -1,7 +1,7 @@
 import { React, Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import parse from "html-react-parser"
 import Img from "gatsby-image"
 
@@ -13,12 +13,12 @@ import { colors } from "../components/global-styles"
 
 class SingleProject extends Component {
   render() {
-    const project = this.props.data.wordpressWpProjects
+    const project = this.props.data.WpProject
     return (
       <Layout>
         <SEO
-          title={project.yoast_meta.yoast_wpseo_title}
-          description={project.yoast_meta.yoast_wpseo_metadesc}
+          title={project.seo.title}
+          description={project.seo.metaDesc}
           keywords={project.tags.map(tag => tag.name)}
         />
         <div
@@ -44,8 +44,8 @@ class SingleProject extends Component {
           />
           <section>
             <Img
-              alt={project.featured_media.alt_text}
-              fluid={project.featured_media.localFile.childImageSharp.fluid}
+              alt={project.featuredImage.node.altText}
+              fluid={project.featuredImage.node.localFile.childImageSharp.fluid}
               css={css`
                 border-bottom: 1px solid ${colors.grey300};
               `}
@@ -77,26 +77,30 @@ export default SingleProject
 
 export const pageQuery = graphql`
   query($id: String!) {
-    wordpressWpProjects(id: { eq: $id }) {
-      wordpress_id
+    wpProject(id: { eq: $id }) {
+      databaseId
       title
       content
       date
       tags {
-        id
-        name
+        nodes {
+          id
+          name
+        }
       }
-      yoast_meta {
-        yoast_wpseo_title
-        yoast_wpseo_metadesc
+      seo {
+        title
+        metaDesc
       }
-      featured_media {
-        source_url
-        alt_text
-        localFile {
-          childImageSharp {
-            fluid(maxWidth: 804) {
-              ...GatsbyImageSharpFluid
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 804) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }

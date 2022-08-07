@@ -1,7 +1,7 @@
 import { React, Component } from "react"
 // import { graphql } from "gatsby"
 // import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import SingleComment from "../components/singleComment"
 import CommentsWrapper from "../components/commentsWrapper"
 import CommentForm from "../components/commentForm"
@@ -26,7 +26,7 @@ class BlogComments extends Component {
       return sortedComments
     }
     const getChildComments = (comment, allComments) => {
-      const parentId = comment.node.wordpress_id
+      const parentId = comment.node.databaseId
       let children = allComments.filter(
         comment => comment.node.wordpress_parent === parentId
       )
@@ -74,7 +74,7 @@ class BlogComments extends Component {
       >
         {allComments ? (
           <div>
-            <CommentForm postId={post.wordpress_id} />
+            <CommentForm databaseId={post.databaseId} />
             <h2>
               {allComments.edges.length} Comments on "{post.title}"
             </h2>
@@ -86,7 +86,7 @@ class BlogComments extends Component {
           </div>
         ) : (
           <div>
-            <CommentForm postId={post.wordpress_id} />
+            <CommentForm databaseId={post.databaseId} />
           </div>
         )}
       </div>

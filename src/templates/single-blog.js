@@ -1,7 +1,7 @@
 import { React, Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import parse from "html-react-parser"
 
 import Layout from "../components/layout"
@@ -20,13 +20,14 @@ class SingleBlog extends Component {
   }
 
   render() {
-    const post = this.props.data.wordpressPost
-    const comments = this.props.data.allWordpressWpComments
+    console.log("THE POST",this.props)
+    const post = this.props.data.wpPost
+    const comments = post.comments
     return (
       <Layout>
         <SEO
-          title={post.yoast_meta.yoast_wpseo_title}
-          description={post.yoast_meta.yoast_wpseo_metadesc}
+          title={post.seo.title}
+          description={post.seo.metaDesc}
         />
         <div
           css={css`
@@ -52,7 +53,7 @@ class SingleBlog extends Component {
           <div ref={el => (this.instance = el)} className="convertkit"></div>
           <Article>{parse(post.content)}</Article>
         </div>
-        <BlogComments comments={comments} post={post} />
+        {/* <BlogComments comments={comments} post={post} /> */}
       </Layout>
     )
   }
@@ -66,31 +67,30 @@ SingleBlog.propTypes = {
 export default SingleBlog
 
 export const pageQuery = graphql`
-  query($id: String!, $postId: Int!) {
-    wordpressPost(id: { eq: $id }) {
-      wordpress_id
+  query($id: String!) {
+    wpPost(id: { eq: $id }) {
+      databaseId
       title
       content
       date
-      yoast_meta {
-        yoast_wpseo_title
-        yoast_wpseo_metadesc
+      seo {
+        title
+        metaDesc
       }
-    }
-    allWordpressWpComments(filter: { post: { eq: $postId } }) {
-      edges {
-        node {
-          id
-          wordpress_id
-          post
-          author
-          author_name
-          author_url
-          date(formatString: "MMMM DD, YYYY")
-          content
-          wordpress_parent
+      comments {
+          nodes {
+            author {
+              node {
+                url
+                name
+              }
+            }
+            content
+            parentDatabaseId
+            parentId
+            date
+          }
         }
-      }
     }
     site {
       siteMetadata {

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -39,7 +39,7 @@ class Projects extends Component {
             }
           `}
         >
-          {data.allWordpressWpProjects.edges.map(({ node }) => (
+          {data.allWpProject.edges.map(({ node }) => (
             <Card
               title={node.title}
               description={node.excerpt}
@@ -47,8 +47,8 @@ class Projects extends Component {
               tags={node.tags.map(tag => tag.name)}
             >
               <Img
-                alt={node.featured_media.alt_text}
-                fluid={node.featured_media.localFile.childImageSharp.fluid}
+                alt={node.featuredImage.node.altText}
+                fluid={node.featuredImage.node.localFile.childImageSharp.fluid}
               />
             </Card>
           ))}
@@ -62,23 +62,27 @@ export default Projects
 
 export const pageQuery = graphql`
   query {
-    allWordpressWpProjects(sort: { fields: [date], order: DESC }) {
+    allWpProject(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           title
           excerpt
           slug
           tags {
-            id
-            name
+            nodes {
+              id
+              name
+            }
           }
-          featured_media {
-            source_url
-            alt_text
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 400, maxHeight: 250) {
-                  ...GatsbyImageSharpFluid
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 400, maxHeight: 250) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }

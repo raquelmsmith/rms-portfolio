@@ -11,16 +11,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const posts = await graphql(`
     {
-      allWordpressPost {
+      allWpPost {
         edges {
           node {
-            id
-            wordpress_id
+            databaseId
             slug
           }
         }
       }
-      allWordpressWpProjects {
+      allWpProject {
         edges {
           node {
             id
@@ -28,18 +27,20 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      allWordpressWpBooks {
+      allWpBook {
         edges {
           node {
             title
-            acf {
+            bookDetails {
               author
               favorite
               link
-              read_status
+              readStatus
             }
             tags {
-              name
+              nodes {
+                name
+              }
             }
             status
           }
@@ -54,25 +55,25 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Access query postss via object destructuring
-  const { allWordpressPost } = posts.data
-  const { allWordpressWpProjects } = posts.data
+  const { allWpPost } = posts.data
+  const { allWpProject } = posts.data
 
   const postTemplate = path.resolve(`./src/templates/single-blog.js`)
   const projectsTemplate = path.resolve(`./src/templates/single-project.js`)
   // We want to create a detailed page for each
   // post node. We'll just use the WordPress Slug for the slug.
   // The Post ID is prefixed with 'POST_'
-  allWordpressPost.edges.forEach(edge => {
+  allWpPost.edges.forEach(edge => {
     createPage({
       path: `/blog/${edge.node.slug}/`,
       component: slash(postTemplate),
       context: {
         id: edge.node.id,
-        postId: edge.node.wordpress_id,
+        databaseId: edge.node.databaseId,
       },
     })
   })
-  allWordpressWpProjects.edges.forEach(edge => {
+  allWpProject.edges.forEach(edge => {
     createPage({
       path: `/projects/${edge.node.slug}/`,
       component: slash(projectsTemplate),

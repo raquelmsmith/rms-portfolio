@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
 
@@ -33,7 +33,7 @@ class CommentForm extends Component {
         .email("Invalid email")
         .required("This field is required"),
     })
-    const postId = this.props.postId
+    const databaseId = this.props.databaseId
     return (
       <div
         css={css`
@@ -62,7 +62,7 @@ class CommentForm extends Component {
         </p>
         <Formik
           initialValues={{
-            post: postId,
+            post: databaseId,
             parent: 0,
             author_name: "",
             author_url: "",

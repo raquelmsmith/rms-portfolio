@@ -1,7 +1,7 @@
 import { React, Component } from "react"
 import { Link, graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
+import { css } from "@emotion/react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -42,7 +42,7 @@ class BlogIndex extends Component {
           >
             Blog
           </h1>
-          {data.allWordpressPost.edges.map(({ node }) => (
+          {data.allWpPost.edges.map(({ node }) => (
             <div
               css={css`
                 background: ${colors.white};
@@ -133,7 +133,7 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date], order: DESC }) {
+    allWpPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           title
