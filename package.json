@@ -13,7 +13,7 @@
     "gatsby-plugin-emotion": "^7.20.0",
     "gatsby-plugin-feed": "^4.20.0",
     "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-image": "^2.20.0",
+    "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-offline": "^5.20.0",
     "gatsby-plugin-polished": "^1.0.3",
