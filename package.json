@@ -8,7 +8,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "babel-plugin-polished": "^1.1.0",
-    "gatsby": "^4.20.0",
+    "gatsby": "^4.25.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-emotion": "^7.20.0",
     "gatsby-plugin-feed": "^4.20.0",
