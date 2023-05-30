@@ -1,45 +1,32 @@
 {
-  "name": "raquel-m-smith-website",
+  "name": "gatsby-starter-default",
   "private": true,
-  "description": "The web home of Raquel M Smith, built with Gatsby JS.",
-  "version": "0.1.0",
-  "author": "Raquel M Smith <hello@raquelmsmith.com>",
+  "description": "A simple starter to get up and developing quickly with Gatsby and TailwindCSS",
+  "version": "0.3.0",
+  "author": "Kostas Vrouvas <hello@kosvrouvas.com>",
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "babel-plugin-polished": "^1.1.0",
-    "gatsby": "^4.20.0",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-emotion": "^7.20.0",
-    "gatsby-plugin-feed": "^4.20.0",
-    "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-image": "^2.20.0",
-    "gatsby-plugin-manifest": "^4.20.0",
-    "gatsby-plugin-offline": "^5.20.0",
-    "gatsby-plugin-polished": "^1.0.3",
-    "gatsby-plugin-react-helmet": "^5.20.0",
-    "gatsby-plugin-robots-txt": "^1.7.1",
-    "gatsby-plugin-sharp": "^4.20.0",
-    "gatsby-plugin-sitemap": "^5.20.0",
-    "gatsby-plugin-typography": "^4.20.0",
-    "gatsby-source-filesystem": "^4.20.0",
-    "gatsby-transformer-sharp": "^4.20.0",
-    "polished": "^4.2.2",
-    "prop-types": "^15.8.1",
+    "autoprefixer": "^10.4.7",
+    "gatsby": "^5.10.0",
+    "gatsby-plugin-image": "^3.10.0",
+    "gatsby-plugin-manifest": "^5.10.0",
+    "gatsby-plugin-offline": "^6.10.0",
+    "gatsby-plugin-postcss": "^6.10.0",
+    "gatsby-plugin-purgecss": "^6.1.2",
+    "gatsby-plugin-react-helmet": "^6.10.0",
+    "gatsby-plugin-sharp": "^5.10.0",
+    "gatsby-source-filesystem": "^5.10.0",
+    "gatsby-transformer-remark": "^6.10.0",
+    "gatsby-transformer-sharp": "^5.10.0",
+    "postcss": "^8.4.14",
+    "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "react-typography": "^0.16.20",
-    "typography": "^0.16.21",
-    "typography-theme-lincoln": "^0.16.18"
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "formik": "^2.2.9",
-    "gatsby-plugin-remote-images": "^3.4.0",
-    "gatsby-source-wordpress": "^6.20.0",
-    "html-react-parser": "^3.0.1",
-    "prettier": "^2.7.1",
-    "yup": "^0.32.11"
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.2.0"
   },
   "keywords": [
     "gatsby"
@@ -48,16 +35,17 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/kosvrouvas/gatsby-tailwindcss-starter/issues"
   }
 }
