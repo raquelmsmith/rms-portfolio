@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-            <div className="bg-indigo-975 w-full h-screen min-h-screen p-16">
+            <div className="bg-indigo-975 w-full min-h-screen p-8 sm:p-16 flex flex-col">
                 {children}
             </div>
         </>

@@ -8,11 +8,14 @@ module.exports = {
     extend: {
       colors: {
         indigo: {
-          975: '#160D30',
+          975: '#1E1B24',
           600: '#AA9BD6'
         },
         red: {
           600: '#F65349'
+        },
+        violet: {
+          300: '#C3BDD3'
         }
       }
     },

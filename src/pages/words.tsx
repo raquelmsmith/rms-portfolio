@@ -1,12 +1,12 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
-import { PageProps, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { MultipleColorfulWords } from "../components/MultipleColorfulWords"
 import { Footer } from "../components/footer"
 import { Link } from "../components/link"
+import { ColorfulH1 } from "../components/ColorfulH1"
 
 const WordsPage = ({
     data: {
@@ -21,15 +21,18 @@ const WordsPage = ({
     return (
         <Layout>
             <SEO title="Raquel M Smith - Contact" />
-            <div className="w-full h-full flex items-center justify-center grow">
+            <div className="w-full flex items-center justify-center grow">
                 <div className="flex flex-col items-center justify-center">
                     <h1>
-                        <MultipleColorfulWords words="Words" size={16} />
+                        <ColorfulH1 text="Words" />
                     </h1>
                     <main className="mt-12 max-w-2xl text-center">
                         <p>
-                            I don't write all that frequently, but when I do
-                            I'll try to link them here.
+                            I don't write that often, but when I do{" "}
+                            <span className="line-through">
+                                I drink Dos Equis
+                            </span>{" "}
+                            I'll link them here.
                         </p>
                         <div className="mt-8">
                             {posts.map(({ node }) => {
@@ -56,6 +59,7 @@ const WordsPage = ({
                                                         ? "_blank"
                                                         : ""
                                                 }
+                                                decoration={false}
                                             >
                                                 {title}
                                             </Link>

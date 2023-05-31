@@ -6,16 +6,26 @@ export const Link = ({
     children,
     className,
     target,
+    decoration = true,
 }: {
     to: string
     children: React.ReactNode
     className?: string
     target?: string
+    decoration?: boolean
 }) => {
     return (
         <GatsbyLink
             to={to}
-            className={`text-indigo-600 transition-all duration-300 hover:text-red-600 ${className}`}
+            className={`text-violet-300 hover:text-red-600
+                decoration-gray-400 hover:decoration-red-600
+                ${
+                    decoration &&
+                    "underline decoration-dotted underline-offset-2 hover:underline hover:decoration-dotted hover:underline-offset-2"
+                }
+                transition-all duration-300 
+                ${className}
+            `}
             target={target}
         >
             {children}

@@ -1,20 +1,18 @@
-// Gatsby supports TypeScript natively!
 import React from "react"
-import { PageProps } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { MultipleColorfulWords } from "../components/MultipleColorfulWords"
 import { Footer } from "../components/footer"
 import { Link } from "../components/link"
+import { ColorfulH1 } from "../components/ColorfulH1"
 
-const AboutPage = (props: PageProps) => (
+const AboutPage = () => (
     <Layout>
         <SEO title="Raquel M Smith - About" />
-        <div className="w-full h-full flex items-center justify-center grow">
+        <div className="w-full flex items-center justify-center grow">
             <div className="flex flex-col items-center justify-center">
                 <h1>
-                    <MultipleColorfulWords words="About" size={16} />
+                    <ColorfulH1 text="About" />
                 </h1>
                 <main className="mt-12 max-w-2xl text-center">
                     <p>
