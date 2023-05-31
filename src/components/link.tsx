@@ -17,8 +17,8 @@ export const Link = ({
     return (
         <GatsbyLink
             to={to}
-            className={`text-violet-300 hover:text-red-600
-                decoration-gray-400 hover:decoration-red-600
+            className={`text-violet-300 hover:text-emerald-500
+                decoration-gray-400 hover:decoration-emerald-500
                 ${
                     decoration &&
                     "underline decoration-dotted underline-offset-2 hover:underline hover:decoration-dotted hover:underline-offset-2"

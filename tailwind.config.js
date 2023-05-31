@@ -16,6 +16,9 @@ module.exports = {
         },
         violet: {
           300: '#C3BDD3'
+        },
+        emerald: {
+          500: '#2FC77A'
         }
       }
     },

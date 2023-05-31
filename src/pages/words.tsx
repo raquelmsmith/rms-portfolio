@@ -29,7 +29,7 @@ const WordsPage = ({
                     <main className="mt-12 max-w-2xl text-center">
                         <p>
                             I don't write that often, but when I do{" "}
-                            <span className="line-through">
+                            <span className="line-through opacity-50">
                                 I drink Dos Equis
                             </span>{" "}
                             I'll link them here.
