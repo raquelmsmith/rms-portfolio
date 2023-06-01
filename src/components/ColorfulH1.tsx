@@ -34,7 +34,15 @@ export const ColorfulH1 = ({
     return (
         <MultipleColorfulWords
             words={text}
-            size={screenSize.width < 400 ? 8 : screenSize.width < 670 ? 12 : 16}
+            size={
+                screenSize
+                    ? screenSize.width < 400
+                        ? 8
+                        : screenSize.width < 670
+                        ? 12
+                        : 16
+                    : 16
+            }
             className={className}
         />
     )
