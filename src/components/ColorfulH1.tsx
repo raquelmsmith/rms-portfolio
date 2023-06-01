@@ -15,7 +15,10 @@ export const ColorfulH1 = ({
     text: string
     className?: string
 }) => {
-    const [screenSize, setScreenSize] = useState(getCurrentDimension(window))
+    const [screenSize, setScreenSize] = useState<{
+        width: number
+        height: number
+    }>()
 
     useEffect(() => {
         const updateDimension = () => {
