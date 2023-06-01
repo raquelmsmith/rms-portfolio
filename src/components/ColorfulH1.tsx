@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { MultipleColorfulWords } from "./MultipleColorfulWords"
 
-const getCurrentDimension = () => {
+const getCurrentDimension = (window: Window) => {
     return {
         width: window.innerWidth,
         height: window.innerHeight,
@@ -15,12 +15,11 @@ export const ColorfulH1 = ({
     text: string
     className?: string
 }) => {
-    const [screenSize, setScreenSize] = useState(getCurrentDimension())
+    const [screenSize, setScreenSize] = useState(getCurrentDimension(window))
 
     useEffect(() => {
         const updateDimension = () => {
-            console.log(getCurrentDimension())
-            setScreenSize(getCurrentDimension())
+            setScreenSize(getCurrentDimension(window))
         }
         window.addEventListener("resize", updateDimension)
 
