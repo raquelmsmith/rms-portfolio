@@ -1,103 +1,67 @@
-import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import { css } from "@emotion/react"
+import React, { useState } from "react"
 
-import { colors, fonts, underline } from "../components/global-styles"
+// TODO: remove me
+function Header({ siteTitle }) {
+  const [isExpanded, toggleExpansion] = useState(false)
 
-const Header = ({ siteTitle }) => (
-  <header
-    css={css`
-      background-color: #333;
-      font-family: ${fonts.quicksand};
-    `}
-  >
-    <div
-      css={css`
-        color: white;
-        margin: 0 auto;
-        max-width: 1200px;
-        padding: 1.45rem 1.0875rem;
-        display: flex;
-        justify-content: center;
-        @media (min-width: 650px) {
-          justify-content: space-between;
-        }
-      `}
-    >
-      <div style={{ margin: 0 }}>
-        <Link
-          to="/"
-          css={css`
-            font-size: 1.5rem;
-            text-shadow: none;
-            color: white;
-            text-transform: lowercase;
-            text-decoration: none;
-            ${underline(
-              colors.grey800,
-              colors.teal,
-              colors.teal,
-              "100%",
-              "2px"
-            )}
-          `}
-        >
+  return (
+    <nav className="flex flex-wrap items-center justify-between p-6 mb-6 bg-gray-800">
+      <div className="flex items-center flex-shrink-0 mr-6 text-white">
+        <span className="text-xl font-semibold tracking-tight">
           {siteTitle}
-        </Link>
+        </span>
       </div>
-      <nav
-        css={css`
-          display: none;
-          @media (min-width: 650px) {
-            display: block;
-          }
-        `}
-      >
-        <ul
-          css={css`
-            list-style: none;
-            display: flex;
-            margin: 0;
-            & li {
-              margin-left: 1rem;
-              margin-bottom: 0;
-            }
-            & a {
-              color: ${colors.white};
-              text-decoration: none;
-              &:hover {
-                ${underline(
-                  colors.grey800,
-                  colors.teal,
-                  colors.teal,
-                  "100%",
-                  "2px"
-                )}
-              }
-            }
-          `}
+      <div className="block lg:hidden">
+        <button
+          onClick={() => toggleExpansion(!isExpanded)}
+          className="flex items-center px-3 py-2 text-white border border-white rounded hover:text-white hover:border-white"
         >
-          <li>
-            <Link to="/about-me/">About</Link>
-          </li>
-          <li>
-            <Link to="/projects/">Projects</Link>
-          </li>
-          <li>
-            <Link to="/bookshelf/">Bookshelf</Link>
-          </li>
-          <li>
-            <Link to="/blog/">Blog</Link>
-          </li>
-          <li>
-            <a href="mailto:hello@raquelmsmith.com">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-)
+          <svg
+            className="w-3 h-3 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        className={`${
+          isExpanded ? `block` : `hidden`
+        } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+      >
+        <div className="text-sm lg:flex-grow">
+          <Link
+            to={`/`}
+            href="#responsive-header"
+            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+          >
+            Home
+          </Link>
+          <Link
+            to={`/page-2`}
+            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+          >
+            page 2
+          </Link>
+        </div>
+        <div>
+          <a
+            href="https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-black hover:bg-white lg:mt-0"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+    </nav>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
