@@ -34,13 +34,13 @@ const WordsPage = ({
                             </span>{" "}
                             I'll link them here.
                         </p>
-                        <div className="mt-8">
+                        <div className="mt-12">
                             {posts.map(({ node }) => {
                                 const title =
                                     node.frontmatter.title || node.fields.slug
                                 return (
                                     <div className="grid grid-cols-4 gap-x-4 mb-6">
-                                        <span className="text-right font-bold font-mono text-sm mt-1">
+                                        <span className="text-right font-bold font-mono text-sm mt-0.5">
                                             {node.frontmatter.date}
                                         </span>
                                         <div className="text-left col-span-3">

@@ -16,14 +16,14 @@ const AboutPage = () => (
                 </h1>
                 <main className="mt-12 max-w-2xl text-center">
                     <p>
-                        Hey there. I'm a software engineer, product manager,
-                        former founder, and generic hacker living in San Luis
-                        Obispo, CA. I taught myself to code when I decided that
-                        my degrees in molecular biology and microbiology weren't
-                        the right career fit for me. I generally work with
-                        typescript and python these days, but I've handled a
-                        number of other languages as well. I'm currently working
-                        as a full-stack engineer on the{" "}
+                        Hey there. I'm a software engineer, product manager, and
+                        former founder living in San Luis Obispo, CA. I taught
+                        myself to code when I decided that my degrees in
+                        molecular biology and microbiology weren't the right
+                        career fit for me. I generally work with typescript and
+                        python these days, but I've handled a number of other
+                        languages as well. I'm currently working as a full-stack
+                        engineer on the{" "}
                         <Link
                             to="https://posthog.com/handbook/small-teams/growth"
                             target="_blank"
