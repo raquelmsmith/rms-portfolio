@@ -31,7 +31,12 @@ export const ColorfulH1 = ({
         }
     }, [screenSize])
 
-    return (
+    useEffect(() => {
+        // have to explicitly call this on mount because it doesn't get called on mount with the one above
+        setScreenSize(getCurrentDimension(window))
+    }, [])
+
+    return screenSize ? (
         <MultipleColorfulWords
             words={text}
             size={
@@ -45,5 +50,5 @@ export const ColorfulH1 = ({
             }
             className={className}
         />
-    )
+    ) : null
 }
