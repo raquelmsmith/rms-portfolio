@@ -1111,7 +1111,7 @@
   resolved "https://registry.yarnpkg.com/@babel/regjsgen/-/regjsgen-0.8.0.tgz#f0ba69b075e1f05fb2825b7fad991e7adbb18310"
   integrity sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.20.13", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.22.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.3.tgz#0a7fce51d43adbf0f7b517a71f4c3aaca92ebcbb"
   integrity sha512-XsDuspWKLUsxwCp6r7EhsExHtYfbe5oAGQ19kqngTdCPUoPQzOPdUbD/pB9PJiwb2ptYKQDjSJT3R6dC+EPqfQ==
@@ -5432,6 +5432,13 @@ gatsby-plugin-postcss@^6.10.0:
   dependencies:
     "@babel/runtime" "^7.20.13"
     postcss-loader "^7.3.0"
+
+gatsby-plugin-posthog@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-posthog/-/gatsby-plugin-posthog-1.0.1.tgz#e455720a66d235ed8d7f508e9e575f95e20f189b"
+  integrity sha512-RIyDTj/XcMvmV6Vs6HJa8zQFGcQr52LcS4iD76g5WfFB705hFOAPchIISFoFMQd3qN1n3m4jUinhA/uuhN43Qg==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
 
 gatsby-plugin-purgecss@^6.1.2:
   version "6.2.1"
