@@ -32,7 +32,7 @@ const AboutPage = () => (
                         </Link>{" "}
                         at{" "}
                         <Link to="https://posthog.com" target="_blank">
-                            Posthog
+                            PostHog
                         </Link>
                         .
                     </p>
