@@ -38,7 +38,11 @@ export const ColorfulWord = ({
         <span>
             <div className={`flex ${getSizeClasses()}`}>
                 {letters.map(letter => (
-                    <span>{getLetterComponent(letter, muted)}</span>
+                    <span>
+                        <div className={`${getSizeClasses()}`}>
+                            {getLetterComponent(letter, muted)}
+                        </div>
+                    </span>
                 ))}
             </div>
         </span>
