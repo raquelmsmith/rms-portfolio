@@ -1,4 +1,9 @@
 {
     "prettier.tabWidth": 4,
-    "prettier.printWidth": 120
+    "prettier.printWidth": 120,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#203132",
+        "titleBar.activeBackground": "#2C4446",
+        "titleBar.activeForeground": "#FAFCFC"
+    }
 }

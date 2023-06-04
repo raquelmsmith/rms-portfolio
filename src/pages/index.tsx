@@ -17,7 +17,7 @@ const IndexPage = () => (
                 </div>
             </h1>
         </div>
-        <Footer showLogo={false} />
+        <Footer mutedLogo={true} />
     </Layout>
 )
 
