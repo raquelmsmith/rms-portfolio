@@ -11,7 +11,7 @@ So what has allowed me to succeed? I've somehow managed to get hired at the best
 
 I think - and I recognize that this sounds conceited - but I think that it is my willingness to do a little something extra that most others aren't willing to do. I'll spend time learning how to code at night instead of watching a TV show. I'll offer to head up a new project at work to get some skills I need. I'll put up not just one but _two_ pull requests to get more eyes on my job application (this worked at PostHog, FWIW).
 
-Yet another part of me whispers that my inherent privilege has _allowed_ me to do extra. I've never had to work to jobs to support an extended family. My parents paid for my education. I've always had the means to buy a computer that I can use to learn to code.
+Yet another part of me whispers that my inherent privilege has _allowed_ me to do extra. I've never had to work two jobs to support an extended family. My parents paid for my education. I've always had the means to buy a computer that I can use to learn to code.
 
 I think both might be correct. All I can do about my privilege is recognize it. But there's a lot I can do about the former - my willingness to do extra.
 
