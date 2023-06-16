@@ -21,7 +21,7 @@ const ContactPage = () => (
                             target="_blank"
                             decoration={false}
                         >
-                            hello@raquelmmsmith.com
+                            hello@raquelmsmith.com
                         </Link>
                     </p>
                     <p>
