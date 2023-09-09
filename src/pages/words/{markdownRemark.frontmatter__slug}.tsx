@@ -24,7 +24,7 @@ export default function WordsPostTemplate({
                         />
                     </h1>
                     <main
-                        className="my-12 max-w-xl text-center"
+                        className="WordsContent my-12 max-w-xl text-left"
                         dangerouslySetInnerHTML={{ __html: html }}
                     />
                 </div>

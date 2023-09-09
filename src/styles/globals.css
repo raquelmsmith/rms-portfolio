@@ -16,5 +16,15 @@ p {
   @apply mb-4
 }
 
+.WordsContent ul {
+  @apply list-disc list-outside mb-4 pl-8;
+}
+ol {
+  @apply list-decimal list-outside;
+}
+li {
+  @apply mb-2;
+}
+
 @tailwind components;
 @tailwind utilities;
